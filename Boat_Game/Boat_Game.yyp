@@ -34,6 +34,7 @@
   },
   "name":"Boat_Game",
   "resources":[
+    {"id":{"name":"obj_new","path":"objects/obj_new/obj_new.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "resourceType":"GMProject",
