@@ -1,11 +1,11 @@
 {
   "$GMSprite":"",
-  "%Name":"bootje",
+  "%Name":"spr_bootje",
   "bboxMode":0,
-  "bbox_bottom":24,
-  "bbox_left":27,
-  "bbox_right":35,
-  "bbox_top":10,
+  "bbox_bottom":14,
+  "bbox_left":0,
+  "bbox_right":8,
+  "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -16,12 +16,12 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":64,
+  "height":15,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"d57743af-0429-4af3-95bb-42208fef28f7","blendMode":0,"displayName":"default","isLocked":false,"name":"d57743af-0429-4af3-95bb-42208fef28f7","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"bootje",
+  "name":"spr_bootje",
   "nineSlice":{
     "$GMNineSliceData":"",
     "bottom":0,
@@ -44,15 +44,15 @@
   },
   "origin":0,
   "parent":{
-    "name":"Boat_Game",
-    "path":"Boat_Game.yyp",
+    "name":"Sprites",
+    "path":"folders/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"bootje",
+    "%Name":"spr_bootje",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -76,7 +76,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"bootje",
+    "name":"spr_bootje",
     "playback":1,
     "playbackSpeed":60.0,
     "playbackSpeedType":0,
@@ -88,7 +88,7 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e5123e1f-72fe-4df9-88d3-541d9c25ea1e","path":"sprites/bootje/bootje.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e5123e1f-72fe-4df9-88d3-541d9c25ea1e","path":"sprites/spr_bootje/spr_bootje.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"80c340c0-0607-49ca-a548-e9cfb52e70aa","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
@@ -105,5 +105,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":64,
+  "width":9,
 }

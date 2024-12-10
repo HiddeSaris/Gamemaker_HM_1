@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"bootje",
-    "path":"sprites/bootje/bootje.yy",
+    "name":"spr_bootje",
+    "path":"sprites/spr_bootje/spr_bootje.yy",
   },
   "spriteMaskId":null,
   "visible":true,
