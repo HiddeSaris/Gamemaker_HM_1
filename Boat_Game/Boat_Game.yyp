@@ -36,6 +36,7 @@
   "resources":[
     {"id":{"name":"obj_test","path":"objects/obj_test/obj_test.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"houte_bootje","path":"sprites/houte_bootje/houte_bootje.yy",},},
     {"id":{"name":"spr_bootje","path":"sprites/spr_bootje/spr_bootje.yy",},},
   ],
   "resourceType":"GMProject",
