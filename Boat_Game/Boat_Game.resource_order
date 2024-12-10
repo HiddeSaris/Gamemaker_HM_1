@@ -17,6 +17,6 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
-    {"name":"houte_bootje","order":16,"path":"sprites/houte_bootje/houte_bootje.yy",},
+    {"name":"spr_houte_bootje","order":16,"path":"sprites/spr_houte_bootje/spr_houte_bootje.yy",},
   ],
 }

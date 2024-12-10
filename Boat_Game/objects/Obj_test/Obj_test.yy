@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"houte_bootje",
-    "path":"sprites/houte_bootje/houte_bootje.yy",
+    "name":"spr_houte_bootje",
+    "path":"sprites/spr_houte_bootje/spr_houte_bootje.yy",
   },
   "spriteMaskId":null,
   "visible":true,
