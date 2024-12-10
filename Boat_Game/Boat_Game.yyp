@@ -34,7 +34,9 @@
   },
   "name":"Boat_Game",
   "resources":[
+    {"id":{"name":"Obj_test","path":"objects/Obj_test/Obj_test.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"bootje","path":"sprites/bootje/bootje.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
