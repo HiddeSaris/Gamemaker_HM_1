@@ -38,6 +38,8 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"spr_bootje","path":"sprites/spr_bootje/spr_bootje.yy",},},
     {"id":{"name":"spr_houte_bootje","path":"sprites/spr_houte_bootje/spr_houte_bootje.yy",},},
+    {"id":{"name":"spr_tileset","path":"sprites/spr_tileset/spr_tileset.yy",},},
+    {"id":{"name":"TileSet1","path":"tilesets/TileSet1/TileSet1.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
