@@ -25,7 +25,8 @@ if keyboard_check(ord("D"))
 }
 if keyboard_check(ord("A"))
 {
-	turning_speed += sqrt(abs(speed)) / 40
+	if (speed >= 0){turning_speed += sqrt(abs(speed)) / 40}
+	else {turning_speed -= sqrt(abs(speed)) / 40}
 }
 
 #endregion
