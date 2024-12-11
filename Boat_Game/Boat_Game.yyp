@@ -35,6 +35,8 @@
   "name":"Boat_Game",
   "resources":[
     {"id":{"name":"obj_boat","path":"objects/obj_boat/obj_boat.yy",},},
+    {"id":{"name":"obj_button_fullscreen","path":"objects/obj_button_fullscreen/obj_button_fullscreen.yy",},},
+    {"id":{"name":"obj_button_parent","path":"objects/obj_button_parent/obj_button_parent.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"spr_bootje","path":"sprites/spr_bootje/spr_bootje.yy",},},

@@ -5,3 +5,5 @@ follow = obj_boat;
 
 xto = x;
 yto = y;
+
+//window_set_fullscreen(true)
