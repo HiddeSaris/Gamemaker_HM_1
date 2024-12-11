@@ -1,7 +1,9 @@
 {
   "$GMTileSet":"v1",
   "%Name":"TileSet1",
-  "autoTileSets":[],
+  "autoTileSets":[
+    {"$GMAutoTileSet":"","%Name":"at_land/sea","closed_edge":true,"name":"at_land/sea","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,],},
+  ],
   "macroPageTiles":{
     "SerialiseHeight":26,
     "SerialiseWidth":21,
