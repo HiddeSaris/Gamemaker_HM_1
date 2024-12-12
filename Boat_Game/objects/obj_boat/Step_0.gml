@@ -2,6 +2,8 @@
 
 speed *= resistance // slow boat down with resistance
 
+show_debug_message(speed)
+
 motion_set(image_angle + 90, speed)
 
 image_angle += turning_speed
@@ -17,13 +19,29 @@ if keyboard_check(ord("S"))
 }
 if keyboard_check(ord("D"))
 {
-	if (speed >= 0){turning_speed -= sqrt(abs(speed)) / 40}
-	else {turning_speed += sqrt(abs(speed)) / 40}
+	if (abs(speed) > 0.3)
+	{
+		if (speed >= 0){turning_speed -= sqrt(abs(speed)) / 40}
+		else {turning_speed += sqrt(abs(speed)) / 40}
+	}
+	else if (abs(speed) > 0.05)
+	{
+		if (speed >= 0){turning_speed -= sqrt(abs(speed)) / 80}
+		else {turning_speed += sqrt(abs(speed)) / 80}
+	}
 }
 if keyboard_check(ord("A"))
 {
-	if (speed >= 0){turning_speed += sqrt(abs(speed)) / 40}
-	else {turning_speed -= sqrt(abs(speed)) / 40}
+	if (abs(speed) > 0.3)
+	{
+		if (speed >= 0){turning_speed += sqrt(abs(speed)) / 40}
+		else {turning_speed -= sqrt(abs(speed)) / 40}
+	}
+	else if (abs(speed) > 0.05)
+	{
+		if (speed >= 0){turning_speed += sqrt(abs(speed)) / 80}
+		else {turning_speed -= sqrt(abs(speed)) / 80}
+	}
 }
 
 #endregion
@@ -32,11 +50,6 @@ if keyboard_check(ord("A"))
 
 var _tilemap = layer_tilemap_get_id("Tiles_1")
 
-var _next_pos_x = x + hspeed
-var _next_pos_y = y + vspeed
-
-var _next_pos_tile = tilemap_get_at_pixel(layer_tilemap_get_id("Tiles_1"), _next_pos_x, _next_pos_y)
-
 // Bbox coords
 var _left = bbox_left + hspeed;
 var _top = bbox_top + vspeed;
@@ -44,9 +57,13 @@ var _right = bbox_right + hspeed;
 var _bottom = bbox_bottom + vspeed;
 
 // Check collision
-var _collision = tilemap_get_at_pixel(_tilemap, _left, _top) ||
-			tilemap_get_at_pixel(_tilemap, _right, _top) ||
-			tilemap_get_at_pixel(_tilemap, _left, _bottom) ||
-			tilemap_get_at_pixel(_tilemap, _right, _bottom);
+var _top_left = tilemap_get_at_pixel(_tilemap, _left, _top);
+var _top_right = tilemap_get_at_pixel(_tilemap, _right, _top);
+var _bottom_left = tilemap_get_at_pixel(_tilemap, _left, _bottom);
+var _bottom_right = tilemap_get_at_pixel(_tilemap, _right, _bottom);
 
+if (_top_left != 8 || _top_right != 8 || _bottom_left != 8 || _bottom_right != 8) // if you touch land
+{
+	respawn_boat() // crashed
+}
 #endregion

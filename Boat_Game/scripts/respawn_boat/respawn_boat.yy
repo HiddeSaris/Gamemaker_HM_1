@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"respawn_boat",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"respawn_boat",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
