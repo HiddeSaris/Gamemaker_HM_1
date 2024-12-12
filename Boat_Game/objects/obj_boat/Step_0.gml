@@ -2,8 +2,6 @@
 
 speed *= resistance // slow boat down with resistance
 
-show_debug_message(speed)
-
 motion_set(image_angle + 90, speed)
 
 image_angle += turning_speed
@@ -43,6 +41,8 @@ if keyboard_check(ord("A"))
 		else {turning_speed -= sqrt(abs(speed)) / 80}
 	}
 }
+
+move_wrap(true, true, -16)
 
 #endregion
 
