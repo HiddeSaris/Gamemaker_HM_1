@@ -115,7 +115,9 @@ var _bottom_right = tilemap_get_at_pixel(_tilemap, _right, _bottom);
 
 if (_top_left != 8 || _top_right != 8 || _bottom_left != 8 || _bottom_right != 8) // if you touch land
 {
-	respawn_boat() // crashed
+	alarm[0] = 180
+	respawn_screen = true
+	respawn_boat()
 }
 #endregion
 
