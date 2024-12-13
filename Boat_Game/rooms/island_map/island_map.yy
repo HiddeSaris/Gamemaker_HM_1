@@ -1,15 +1,15 @@
 {
   "$GMRoom":"v1",
-  "%Name":"Room1",
+  "%Name":"island_map",
   "creationCodeFile":"",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_40A97871","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_2E402AE3","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_62241433","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_5843985D","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_40A97871","path":"rooms/island_map/island_map.yy",},
+    {"name":"inst_2E402AE3","path":"rooms/island_map/island_map.yy",},
+    {"name":"inst_62241433","path":"rooms/island_map/island_map.yy",},
+    {"name":"inst_5843985D","path":"rooms/island_map/island_map.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -35,7 +35,7 @@
         ],"TileDataFormat":1,},"tilesetId":{"name":"TileSet1","path":"tilesets/TileSet1/TileSet1.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
-  "name":"Room1",
+  "name":"island_map",
   "parent":{
     "name":"Rooms",
     "path":"folders/Rooms.yy",
