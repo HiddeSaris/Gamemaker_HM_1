@@ -7,15 +7,15 @@ motion_set(image_angle + 90, speed)
 image_angle += turning_speed
 turning_speed *= resistance / 1.01
 
-if keyboard_check(ord("W"))
+if (keyboard_check(ord("W")) && !anchor)
 {
 	speed += acceleration
 }
-if keyboard_check(ord("S"))
+if (keyboard_check(ord("S")) && !anchor)
 {
 	speed -= acceleration
 }
-if keyboard_check(ord("D"))
+if (keyboard_check(ord("D")) && !anchor)
 {
 	if (abs(speed) > 0.3)
 	{
@@ -28,7 +28,7 @@ if keyboard_check(ord("D"))
 		else {turning_speed += sqrt(abs(speed)) / 80}
 	}
 }
-if keyboard_check(ord("A"))
+if (keyboard_check(ord("A")) && !anchor)
 {
 	if (abs(speed) > 0.3)
 	{
@@ -66,4 +66,24 @@ if (_top_left != 8 || _top_right != 8 || _bottom_left != 8 || _bottom_right != 8
 {
 	respawn_boat() // crashed
 }
+#endregion
+
+#region ANCHOR
+
+if (keyboard_check_pressed(ord("Q")))
+{
+	anchor = !anchor
+}
+
+if (anchor && speed >= 0.01)
+{
+	speed *= 0.95
+	turning_speed *= 0.95
+}
+else if (anchor)
+{
+	speed = 0
+	turning_speed = 0
+}
+
 #endregion
