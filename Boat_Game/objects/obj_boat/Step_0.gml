@@ -14,6 +14,12 @@ else if (self.sprite_index = spr_kleine_vissers_boot)
 	acceleration = 0.002
 	resistance = 1 - (acceleration / (max_speed + acceleration))
 }
+else if (self.sprite_index = spr_middel_vissers_boot)
+{
+	max_speed = 1.5
+	acceleration = 0.003
+	resistance = 1 - (acceleration / (max_speed + acceleration))
+}
 
 #endregion
 
