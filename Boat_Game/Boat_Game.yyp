@@ -39,7 +39,8 @@
     {"id":{"name":"obj_button_parent","path":"objects/obj_button_parent/obj_button_parent.yy",},},
     {"id":{"name":"obj_button_quit","path":"objects/obj_button_quit/obj_button_quit.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"island_map","path":"rooms/island_map/island_map.yy",},},
+    {"id":{"name":"world_map","path":"rooms/world_map/world_map.yy",},},
     {"id":{"name":"respawn_boat","path":"scripts/respawn_boat/respawn_boat.yy",},},
     {"id":{"name":"spr_bootje","path":"sprites/spr_bootje/spr_bootje.yy",},},
     {"id":{"name":"spr_button_fullscreen","path":"sprites/spr_button_fullscreen/spr_button_fullscreen.yy",},},
@@ -52,7 +53,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"island_map","path":"rooms/island_map/island_map.yy",},},
+    {"roomId":{"name":"world_map","path":"rooms/world_map/world_map.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
