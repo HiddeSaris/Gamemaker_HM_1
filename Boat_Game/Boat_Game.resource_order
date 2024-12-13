@@ -26,6 +26,7 @@
     {"name":"spr_button_quit","order":4,"path":"sprites/spr_button_quit/spr_button_quit.yy",},
     {"name":"spr_houte_bootje","order":1,"path":"sprites/spr_houte_bootje/spr_houte_bootje.yy",},
     {"name":"spr_kleine_vissers_boot","order":5,"path":"sprites/spr_kleine_vissers_boot/spr_kleine_vissers_boot.yy",},
+    {"name":"spr_middel_vissers_boot","order":6,"path":"sprites/spr_middel_vissers_boot/spr_middel_vissers_boot.yy",},
     {"name":"spr_tileset","order":2,"path":"sprites/spr_tileset/spr_tileset.yy",},
   ],
 }
