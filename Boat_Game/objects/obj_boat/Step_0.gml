@@ -1,3 +1,41 @@
+#region BOAT
+
+#region SETTING UP SPEED PER BOAT
+
+if (self.sprite_index = spr_houte_bootje)
+{
+	max_speed = 0.5
+	acceleration = 0.001
+	resistance = 1 - (acceleration / (max_speed + acceleration))
+}
+else if (self.sprite_index = spr_kleine_vissers_boot)
+{
+	max_speed = 1
+	acceleration = 0.002
+	resistance = 1 - (acceleration / (max_speed + acceleration))
+}
+
+#endregion
+
+#region SWITCHING BOAT
+
+if (keyboard_check_pressed(ord("E")))
+{
+	if (cur_boat = array_length(boats) - 1) // If its the last boat
+	{
+		cur_boat = 0
+	}
+	else
+	{
+		cur_boat += 1
+	}
+	self.sprite_index = boats[cur_boat]
+}
+
+#endregion`
+
+#endregion
+
 #region MOVEMENT
 
 speed *= resistance // slow boat down with resistance
@@ -6,6 +44,7 @@ motion_set(image_angle + 90, speed)
 
 image_angle += turning_speed
 turning_speed *= resistance / 1.01
+
 
 if (keyboard_check(ord("W")) && !anchor)
 {
