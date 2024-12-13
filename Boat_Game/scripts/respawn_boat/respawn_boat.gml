@@ -10,4 +10,5 @@ function respawn_boat(){
 	self.image_angle = _rot
 	self.speed = 0
 	self.turning_speed = 0
+	camera_set_view_pos(view_camera[0], self.x, self.y)
 }
