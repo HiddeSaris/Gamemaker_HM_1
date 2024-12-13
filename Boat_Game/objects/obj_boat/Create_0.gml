@@ -1,4 +1,5 @@
 turning_speed = 0
+turning_acceleration = 0.025
 
 max_speed = 0.5
 acceleration = 0.002

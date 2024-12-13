@@ -6,18 +6,24 @@ if (self.sprite_index = spr_houte_bootje)
 {
 	max_speed = 0.5
 	acceleration = 0.001
+	turning_acceleration = 0.025
+	
 	resistance = 1 - (acceleration / (max_speed + acceleration))
 }
 else if (self.sprite_index = spr_kleine_vissers_boot)
 {
 	max_speed = 1
 	acceleration = 0.002
+	turning_acceleration = 0.020
+	
 	resistance = 1 - (acceleration / (max_speed + acceleration))
 }
 else if (self.sprite_index = spr_middel_vissers_boot)
 {
 	max_speed = 1.5
-	acceleration = 0.003
+	acceleration = 0.001
+	turning_acceleration = 0.015
+	
 	resistance = 1 - (acceleration / (max_speed + acceleration))
 }
 
@@ -64,26 +70,26 @@ if (keyboard_check(ord("D")) && !anchor)
 {
 	if (abs(speed) > 0.3)
 	{
-		if (speed >= 0){turning_speed -= sqrt(abs(speed)) / 40}
-		else {turning_speed += sqrt(abs(speed)) / 40}
+		if (speed >= 0){turning_speed -= sqrt(abs(speed)) * turning_acceleration}
+		else {turning_speed += sqrt(abs(speed)) * turning_acceleration}
 	}
 	else if (abs(speed) > 0.05)
 	{
-		if (speed >= 0){turning_speed -= sqrt(abs(speed)) / 80}
-		else {turning_speed += sqrt(abs(speed)) / 80}
+		if (speed >= 0){turning_speed -= sqrt(abs(speed)) * turning_acceleration / 2}
+		else {turning_speed += sqrt(abs(speed)) * turning_acceleration / 2}
 	}
 }
 if (keyboard_check(ord("A")) && !anchor)
 {
 	if (abs(speed) > 0.3)
 	{
-		if (speed >= 0){turning_speed += sqrt(abs(speed)) / 40}
-		else {turning_speed -= sqrt(abs(speed)) / 40}
+		if (speed >= 0){turning_speed += sqrt(abs(speed)) * turning_acceleration}
+		else {turning_speed -= sqrt(abs(speed)) * turning_acceleration}
 	}
 	else if (abs(speed) > 0.05)
 	{
-		if (speed >= 0){turning_speed += sqrt(abs(speed)) / 80}
-		else {turning_speed -= sqrt(abs(speed)) / 80}
+		if (speed >= 0){turning_speed += sqrt(abs(speed)) * turning_acceleration / 2}
+		else {turning_speed -= sqrt(abs(speed)) * turning_acceleration / 2}
 	}
 }
 
