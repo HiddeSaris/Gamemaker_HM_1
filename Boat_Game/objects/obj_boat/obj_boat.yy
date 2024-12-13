@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_houte_bootje",
-    "path":"sprites/spr_houte_bootje/spr_houte_bootje.yy",
+    "name":"spr_kleine_vissers_boot",
+    "path":"sprites/spr_kleine_vissers_boot/spr_kleine_vissers_boot.yy",
   },
   "spriteMaskId":null,
   "visible":true,
