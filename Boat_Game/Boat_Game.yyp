@@ -49,6 +49,7 @@
     {"id":{"name":"spr_kleine_vissers_boot","path":"sprites/spr_kleine_vissers_boot/spr_kleine_vissers_boot.yy",},},
     {"id":{"name":"spr_middel_vissers_boot","path":"sprites/spr_middel_vissers_boot/spr_middel_vissers_boot.yy",},},
     {"id":{"name":"spr_tileset","path":"sprites/spr_tileset/spr_tileset.yy",},},
+    {"id":{"name":"spr_your_stranded","path":"sprites/spr_your_stranded/spr_your_stranded.yy",},},
     {"id":{"name":"TileSet1","path":"tilesets/TileSet1/TileSet1.yy",},},
   ],
   "resourceType":"GMProject",
