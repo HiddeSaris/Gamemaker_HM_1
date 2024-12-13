@@ -25,6 +25,7 @@
     {"name":"spr_button_fullscreen","order":3,"path":"sprites/spr_button_fullscreen/spr_button_fullscreen.yy",},
     {"name":"spr_button_quit","order":4,"path":"sprites/spr_button_quit/spr_button_quit.yy",},
     {"name":"spr_houte_bootje","order":1,"path":"sprites/spr_houte_bootje/spr_houte_bootje.yy",},
+    {"name":"spr_project","order":5,"path":"sprites/spr_project/spr_project.yy",},
     {"name":"spr_tileset","order":2,"path":"sprites/spr_tileset/spr_tileset.yy",},
   ],
 }
