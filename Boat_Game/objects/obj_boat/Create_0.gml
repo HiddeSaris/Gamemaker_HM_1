@@ -14,3 +14,5 @@ anchor = false
 
 cur_boat = 0
 boats = [spr_houte_bootje, spr_kleine_vissers_boot, spr_middel_vissers_boot]
+
+respawn_screen = false
