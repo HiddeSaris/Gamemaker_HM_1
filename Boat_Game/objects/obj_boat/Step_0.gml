@@ -22,7 +22,7 @@ else if (self.sprite_index = spr_middel_vissers_boot)
 {
 	max_speed = 1.5
 	acceleration = 0.001
-	turning_acceleration = 0.015
+	turning_acceleration = 0.010
 	
 	resistance = 1 - (acceleration / (max_speed + acceleration))
 }
