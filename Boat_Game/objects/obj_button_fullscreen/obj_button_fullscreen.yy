@@ -1,17 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"Obj_test",
+  "%Name":"obj_button_fullscreen",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"Obj_test",
+  "name":"obj_button_fullscreen",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_button_parent",
+    "path":"objects/obj_button_parent/obj_button_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bootje",
-    "path":"sprites/spr_bootje/spr_bootje.yy",
+    "name":"spr_button_fullscreen",
+    "path":"sprites/spr_button_fullscreen/spr_button_fullscreen.yy",
   },
   "spriteMaskId":null,
   "visible":true,
