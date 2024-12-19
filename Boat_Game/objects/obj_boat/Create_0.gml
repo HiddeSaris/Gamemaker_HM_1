@@ -13,6 +13,6 @@ resistance = 1 - (acceleration / (max_speed + acceleration)) // number 0 - 1, 0.
 anchor = false
 
 cur_boat = 0
-boats = [spr_houte_bootje, spr_kleine_vissers_boot, spr_middel_vissers_boot, spr_grote_vissers_boot]
+boats = [spr_houte_bootje, spr_kleine_vissers_boot, spr_middel_vissers_boot, spr_grote_vissers_boot, spr_speedboot]
 
 respawn_screen = false

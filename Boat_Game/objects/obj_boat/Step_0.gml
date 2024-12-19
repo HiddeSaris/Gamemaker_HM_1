@@ -34,6 +34,14 @@ else if (self.sprite_index = spr_grote_vissers_boot)
 	
 	resistance = 1 - (acceleration / (max_speed + acceleration))
 }
+else if (self.sprite_index = spr_speedboot)
+{
+	max_speed = 3
+	acceleration = 0.004
+	turning_acceleration = 0.03
+	
+	resistance = 1 - (acceleration / (max_speed + acceleration))
+}
 
 #endregion
 
