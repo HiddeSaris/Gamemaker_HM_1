@@ -22,6 +22,7 @@
     {"name":"obj_button_parent","order":2,"path":"objects/obj_button_parent/obj_button_parent.yy",},
     {"name":"obj_button_quit","order":4,"path":"objects/obj_button_quit/obj_button_quit.yy",},
     {"name":"obj_camera","order":1,"path":"objects/obj_camera/obj_camera.yy",},
+    {"name":"island2","order":2,"path":"rooms/island2/island2.yy",},
     {"name":"world_map","order":1,"path":"rooms/world_map/world_map.yy",},
     {"name":"spr_button_fullscreen","order":3,"path":"sprites/spr_button_fullscreen/spr_button_fullscreen.yy",},
     {"name":"spr_button_quit","order":4,"path":"sprites/spr_button_quit/spr_button_quit.yy",},
