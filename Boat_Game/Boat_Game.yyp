@@ -41,7 +41,7 @@
     {"id":{"name":"obj_button_quit","path":"objects/obj_button_quit/obj_button_quit.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"island_base","path":"rooms/island_base/island_base.yy",},},
-    {"id":{"name":"island2","path":"rooms/island2/island2.yy",},},
+    {"id":{"name":"island1","path":"rooms/island1/island1.yy",},},
     {"id":{"name":"world_map","path":"rooms/world_map/world_map.yy",},},
     {"id":{"name":"respawn_boat","path":"scripts/respawn_boat/respawn_boat.yy",},},
     {"id":{"name":"spr_bootje","path":"sprites/spr_bootje/spr_bootje.yy",},},
@@ -61,7 +61,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"island_base","path":"rooms/island_base/island_base.yy",},},
     {"roomId":{"name":"world_map","path":"rooms/world_map/world_map.yy",},},
-    {"roomId":{"name":"island2","path":"rooms/island2/island2.yy",},},
+    {"roomId":{"name":"island1","path":"rooms/island1/island1.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
