@@ -32,6 +32,7 @@
     {"name":"spr_middel_vissers_boot","order":4,"path":"sprites/spr_middel_vissers_boot/spr_middel_vissers_boot.yy",},
     {"name":"spr_speedboot","order":5,"path":"sprites/spr_speedboot/spr_speedboot.yy",},
     {"name":"spr_tileset","order":2,"path":"sprites/spr_tileset/spr_tileset.yy",},
+    {"name":"spr_vissen_houte_bootje","order":6,"path":"sprites/spr_vissen_houte_bootje/spr_vissen_houte_bootje.yy",},
     {"name":"spr_your_stranded","order":7,"path":"sprites/spr_your_stranded/spr_your_stranded.yy",},
   ],
 }

@@ -47,7 +47,7 @@ else if (self.sprite_index = spr_speedboot)
 
 #region SWITCHING BOAT
 
-if (keyboard_check_pressed(ord("E")))
+if (keyboard_check_pressed(ord("Q")))
 {
 	if (cur_boat = array_length(boats) - 1) // If its the last boat
 	{
@@ -139,7 +139,7 @@ if (_top_left != 8 || _top_right != 8 || _bottom_left != 8 || _bottom_right != 8
 
 #region ANCHOR
 
-if (keyboard_check_pressed(ord("Q")))
+if (keyboard_check_pressed(ord("F")))
 {
 	anchor = !anchor
 }
@@ -153,6 +153,22 @@ else if (anchor)
 {
 	speed = 0
 	turning_speed = 0
+}
+
+#endregion
+
+#region FISHING
+
+if (keyboard_check(ord("E")))
+{
+	if (anchor)
+	{
+		
+	}
+	else
+	{
+		show_message("Je moet je anchor uit hebben om te vissen")
+	}
 }
 
 #endregion
