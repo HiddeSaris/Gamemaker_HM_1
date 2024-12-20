@@ -2,14 +2,14 @@
 
 #region SETTING UP SPEED PER BOAT
 
-if (self.sprite_index = spr_houte_bootje)
+if (cur_boat = 0) // houte boot
 {
 	max_speed = 0.5
 	acceleration = 0.001  
 	turning_acceleration = 0.025 
 	resistance = 1 - (acceleration / (max_speed + acceleration))
 }
-else if (self.sprite_index = spr_kleine_vissers_boot)
+else if (cur_boat = 1) // kleine vissersboot
 {
 	max_speed = 1
 	acceleration = 0.002
@@ -17,7 +17,7 @@ else if (self.sprite_index = spr_kleine_vissers_boot)
 	
 	resistance = 1 - (acceleration / (max_speed + acceleration))
 }
-else if (self.sprite_index = spr_middel_vissers_boot)
+else if (cur_boat = 2) // middel vissersboot
 {
 	max_speed = 1.5
 	acceleration = 0.001
@@ -25,7 +25,7 @@ else if (self.sprite_index = spr_middel_vissers_boot)
 	
 	resistance = 1 - (acceleration / (max_speed + acceleration))
 }
-else if (self.sprite_index = spr_grote_vissers_boot)
+else if (cur_boat = 3) // grote vissersboot
 {
 	max_speed = 2
 	acceleration = 0.001
@@ -33,7 +33,7 @@ else if (self.sprite_index = spr_grote_vissers_boot)
 	
 	resistance = 1 - (acceleration / (max_speed + acceleration))
 }
-else if (self.sprite_index = spr_speedboot)
+else if (cur_boat = 4) // speedboat
 {
 	max_speed = 3
 	acceleration = 0.004
@@ -160,12 +160,21 @@ if (keyboard_check(ord("E")))
 {
 	if (anchor)
 	{
-		
+		if (not fishing)
+		{
+			image_speed = 1
+		}
 	}
 	else
 	{
 		show_message("Je moet je anchor uit hebben om te vissen")
 	}
+}
+
+if (image_index == image_number) // laatste frame van animatie
+{
+	fishing = true
+	image_speed = 0
 }
 
 #endregion

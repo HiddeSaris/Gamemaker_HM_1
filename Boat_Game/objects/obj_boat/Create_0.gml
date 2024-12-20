@@ -20,3 +20,6 @@ respawn_y = y
 respawn_rot = image_angle
 
 respawn_screen = false
+
+fishing = false
+image_speed = 0
