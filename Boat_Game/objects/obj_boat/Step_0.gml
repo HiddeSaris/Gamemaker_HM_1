@@ -5,9 +5,8 @@
 if (self.sprite_index = spr_houte_bootje)
 {
 	max_speed = 0.5
-	acceleration = 0.001
-	turning_acceleration = 0.025
-	
+	acceleration = 0.001  
+	turning_acceleration = 0.025 
 	resistance = 1 - (acceleration / (max_speed + acceleration))
 }
 else if (self.sprite_index = spr_kleine_vissers_boot)
@@ -60,7 +59,7 @@ if (keyboard_check_pressed(ord("Q")))
 	self.sprite_index = boats[cur_boat]
 }
 
-#endregion`
+#endregion
 
 #endregion
 
@@ -131,8 +130,6 @@ var _bottom_right = tilemap_get_at_pixel(_tilemap, _right, _bottom);
 
 if (_top_left != 8 || _top_right != 8 || _bottom_left != 8 || _bottom_right != 8) // if you touch land
 {
-	alarm[0] = 180
-	respawn_screen = true
 	respawn_boat()
 }
 #endregion

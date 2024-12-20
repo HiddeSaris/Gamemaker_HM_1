@@ -15,4 +15,8 @@ anchor = false
 cur_boat = 0
 boats = [spr_houte_bootje, spr_kleine_vissers_boot, spr_middel_vissers_boot, spr_grote_vissers_boot, spr_speedboot]
 
+respawn_x = x
+respawn_y = y
+respawn_rot = image_angle
+
 respawn_screen = false
