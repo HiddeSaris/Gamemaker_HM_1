@@ -42,7 +42,7 @@
   ],
   "name":"spr_kleine_vissers_boot",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"boten",
     "path":"folders/Sprites/boten.yy",
@@ -148,8 +148,8 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":14,
-    "yorigin":23,
+    "xorigin":6,
+    "yorigin":40,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
@@ -159,5 +159,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":29,
+  "width":24,
 }

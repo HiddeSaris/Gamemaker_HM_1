@@ -177,4 +177,9 @@ if (image_index == image_number) // laatste frame van animatie
 	image_speed = 0
 }
 
+if (keyboard_check(vk_space) && fishing)
+{
+	
+}
+
 #endregion
