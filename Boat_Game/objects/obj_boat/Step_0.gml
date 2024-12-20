@@ -57,6 +57,11 @@ if (keyboard_check_pressed(ord("Q")))
 		cur_boat += 1
 	}
 	self.sprite_index = boats[cur_boat]
+	// assign the new sprite
+	
+	fishing_rod_dir = point_direction(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), fishing_rod_pos_boats[cur_boat][0], fishing_rod_pos_boats[cur_boat][1])
+	fishing_rod_len = point_distance(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), fishing_rod_pos_boats[cur_boat][0], fishing_rod_pos_boats[cur_boat][1])
+	// update rod position
 }
 
 #endregion
@@ -167,11 +172,11 @@ if (keyboard_check(ord("E")))
 	}
 	else
 	{
-		show_message("Je moet je anchor uit hebben om te vissen")
+		show_message("Je moet je anker uit hebben om te vissen")
 	}
 }
 
-if (image_index == image_number) // laatste frame van animatie
+if (image_index >= image_number - 1) // laatste frame van animatie
 {
 	fishing = true
 	image_speed = 0

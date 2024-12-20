@@ -47,7 +47,7 @@
   ],
   "name":"spr_middel_vissers_boot",
   "nineSlice":null,
-  "origin":9,
+  "origin":4,
   "parent":{
     "name":"boten",
     "path":"folders/Sprites/boten.yy",

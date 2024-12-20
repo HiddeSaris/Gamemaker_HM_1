@@ -1,12 +1,6 @@
-if (cur_boat == 0 and not fishing) // houte boot
+draw_self();
+
+if (not fishing)
 {
-	draw_sprite(spr_fishing_rod, 3, x - 3, y + 4)
-}
-else if (cur_boat == 1 and not fishing) // kleine vissersboot
-{
-	draw_sprite(spr_fishing_rod, 3, x - 6, y + 17)
-}
-else if (cur_boat == 2 and not fishing) // middel vissersboot
-{
-	draw_sprite(spr_fishing_rod, 3, x - 3, y + 4)
+	draw_sprite_ext(spr_fishing_rod, 3, x + lengthdir_x(fishing_rod_len, fishing_rod_dir), y + lengthdir_y(fishing_rod_len, fishing_rod_dir), 1, 1, image_angle, c_white, 1)
 }
