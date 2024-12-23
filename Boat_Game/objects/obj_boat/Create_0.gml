@@ -14,6 +14,7 @@ anchor = false
 
 cur_boat = 0
 boats = [spr_houte_bootje, spr_kleine_vissers_boot, spr_middel_vissers_boot, spr_grote_vissers_boot, spr_speedboot]
+fishing_rod_pos_boats = [[5, 21], [6, 40], [10, 27]]
 
 respawn_x = x
 respawn_y = y
@@ -23,3 +24,6 @@ respawn_screen = false
 
 fishing = false
 image_speed = 0
+
+fishing_rod_dir = point_direction(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), fishing_rod_pos_boats[cur_boat][0], fishing_rod_pos_boats[cur_boat][1])
+fishing_rod_len = point_distance(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), fishing_rod_pos_boats[cur_boat][0], fishing_rod_pos_boats[cur_boat][1])
