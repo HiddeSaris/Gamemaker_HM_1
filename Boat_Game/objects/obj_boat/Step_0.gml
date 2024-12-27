@@ -184,7 +184,11 @@ if (image_index >= image_number - 1) // laatste frame van animatie
 
 if (keyboard_check(vk_space) && fishing)
 {
-	
+	fishing_rod_animation_timer = 7 * sprite_get_number(spr_fishing_rod)
 }
+
+if (fishing_rod_animation_timer > 0) {fishing_rod_animation_timer -= 1}
+
+frame_fishing_rod = 7 * sprite_get_number(spr_fishing_rod) - floor(fishing_rod_animation_timer / 7) 
 
 #endregion
