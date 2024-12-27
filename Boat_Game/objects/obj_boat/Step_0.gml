@@ -169,12 +169,13 @@ if (keyboard_check_pressed(ord("E"))) // go to fishing pos
 		if (not fishing)
 		{
 			image_speed = 1 // walk to fishing position
+			fishing_rod_animation_timer = -1
 		}
-		else 
+		else if (not fishing_rod_out)
 		{
-			image_index = 0 // go back to steering position
 			fishing = false
 			image_speed = 0 // stop the animation
+			image_index = 0 // go back to steering position
 		}
 	}
 	else
@@ -191,11 +192,22 @@ if (image_index >= image_number - 1) // laatste frame van animatie
 
 if (keyboard_check_pressed(vk_space) && fishing) // if want to fish
 {
-	fishing_rod_animation_timer = 7 * sprite_get_number(spr_fishing_rod) // set the animation timer
+	if (not fishing_rod_out)
+	{
+		fishing_rod_animation_timer = 7 * (sprite_get_number(spr_fishing_rod) - 1) // set the animation timer
+	}
+	else
+	{
+		// pull the fish out of the water and the rod
+		fishing_rod_animation_timer = -1
+	}
 }
 
 if (fishing_rod_animation_timer > 0) {fishing_rod_animation_timer -= 1} // count the timer down
+	
+if (fishing_rod_animation_timer = 0) {fishing_rod_out = true} // update the variable
+else {fishing_rod_out = false}
 
-frame_fishing_rod = 7 * sprite_get_number(spr_fishing_rod) - floor(fishing_rod_animation_timer / 7) // change the current frame to the timer
+frame_fishing_rod = sprite_get_number(spr_fishing_rod) - floor(fishing_rod_animation_timer / 7) - 1 // change the current frame to the timer
 
 #endregion

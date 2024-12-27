@@ -24,6 +24,7 @@ respawn_rot = image_angle
 respawn_screen = false
 
 fishing = false
+fishing_rod_out = false
 image_speed = 0
 
 fishing_rod_dir = point_direction(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), fishing_rod_pos_boats[cur_boat][0], fishing_rod_pos_boats[cur_boat][1]) + image_angle
@@ -35,4 +36,4 @@ person_len = point_distance(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoff
 frame_person = 0
 frame_fishing_rod = 0
 
-fishing_rod_animation_timer = 0
+fishing_rod_animation_timer = -1
