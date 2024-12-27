@@ -14,8 +14,8 @@ anchor = false
 
 cur_boat = 0
 boats = [spr_houte_bootje, spr_kleine_vissers_boot, spr_middel_vissers_boot, spr_grote_vissers_boot, spr_speedboot]
-fishing_rod_pos_boats = [[5, 21], [6, 40], [10, 27]]
-person_pos_boats = [[3, 24]]
+fishing_rod_pos_boats = [[5, 21], [6, 40], [4, 45], [4, 52], [4, 37]]
+person_pos_boats = [[3, 24], [4, 37], [5, 42], [9, 51], [2	, 33]]
 
 respawn_x = x
 respawn_y = y
