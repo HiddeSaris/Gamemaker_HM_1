@@ -143,7 +143,8 @@ if (_top_left != 8 || _top_right != 8 || _bottom_left != 8 || _bottom_right != 8
 
 if (keyboard_check_pressed(ord("F")))
 {
-	anchor = !anchor
+	if (anchor && !fishing && image_speed == 0) {anchor = false}
+	else if (!anchor) {anchor = true}
 }
 
 if (anchor && speed >= 0.01)
@@ -161,13 +162,19 @@ else if (anchor)
 
 #region FISHING
 
-if (keyboard_check(ord("E")))
+if (keyboard_check_pressed(ord("E"))) // go to fishing pos
 {
 	if (anchor)
 	{
 		if (not fishing)
 		{
-			image_speed = 1
+			image_speed = 1 // walk to fishing position
+		}
+		else 
+		{
+			image_index = 0 // go back to steering position
+			fishing = false
+			image_speed = 0 // stop the animation
 		}
 	}
 	else
@@ -182,13 +189,13 @@ if (image_index >= image_number - 1) // laatste frame van animatie
 	image_speed = 0
 }
 
-if (keyboard_check(vk_space) && fishing)
+if (keyboard_check_pressed(vk_space) && fishing) // if want to fish
 {
-	fishing_rod_animation_timer = 7 * sprite_get_number(spr_fishing_rod)
+	fishing_rod_animation_timer = 7 * sprite_get_number(spr_fishing_rod) // set the animation timer
 }
 
-if (fishing_rod_animation_timer > 0) {fishing_rod_animation_timer -= 1}
+if (fishing_rod_animation_timer > 0) {fishing_rod_animation_timer -= 1} // count the timer down
 
-frame_fishing_rod = 7 * sprite_get_number(spr_fishing_rod) - floor(fishing_rod_animation_timer / 7) 
+frame_fishing_rod = 7 * sprite_get_number(spr_fishing_rod) - floor(fishing_rod_animation_timer / 7) // change the current frame to the timer
 
 #endregion
