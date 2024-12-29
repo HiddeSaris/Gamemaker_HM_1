@@ -2,6 +2,8 @@
 
 #region SETTING UP SPEED PER BOAT
 
+// setting up all the data that differs per boat
+
 if (cur_boat = 0) // houte boot
 {
 	max_speed = 0.5
@@ -147,7 +149,7 @@ if (keyboard_check_pressed(ord("F")))
 	else if (!anchor) {anchor = true}
 }
 
-if (anchor && speed >= 0.01)
+if (anchor && (speed >= 0.01 || speed <= -0.01))
 {
 	speed *= 0.95
 	turning_speed *= 0.95
@@ -184,29 +186,51 @@ if (keyboard_check_pressed(ord("E"))) // go to fishing pos
 	}
 }
 
-if (image_index >= image_number - 1) // laatste frame van animatie
+
+bobber_dir = point_direction(sprite_get_xoffset(spr_fishing_rod), sprite_get_yoffset(spr_fishing_rod), 0, 0) + image_angle
+bobber_len = point_distance(sprite_get_xoffset(spr_fishing_rod), sprite_get_yoffset(spr_fishing_rod), 0, 0)
+
+bobber_x = x + lengthdir_x(bobber_len, bobber_dir)
+bobber_y = y + lengthdir_y(bobber_len, bobber_dir)
+
+var _bobber_tilemap = tilemap_get_at_pixel(_tilemap, bobber_x, bobber_y);
+
+if (_bobber_tilemap != 8) // if you touch land
 {
-	fishing = true
-	image_speed = 0
+	bobber_in_water = false
+}
+else 
+{
+	bobber_in_water = true
 }
 
-if (keyboard_check_pressed(vk_space) && fishing) // if want to fish
+
+if (image_index >= image_number - 1) // last frame of the walking animation
 {
-	if (not fishing_rod_out)
+	fishing = true // now able to fish
+	image_speed = 0 // stop the animation
+}
+
+if (keyboard_check_pressed(vk_space) && fishing && bobber_in_water) // if want to fish
+{
+	if (not fishing_rod_out) // cast rod
 	{
 		fishing_rod_animation_timer = 7 * (sprite_get_number(spr_fishing_rod) - 1) // set the animation timer
 	}
 	else
 	{
-		// pull the fish out of the water and the rod
-		fishing_rod_animation_timer = -1
+		// pull the rod out of the water
+		fishing_rod_out = false
 	}
 }
+else if (keyboard_check_pressed(vk_space) && not bobber_in_water)
+{
+	show_message("did you know you have to fish in water, you learn something new every day.")
+}
 
-if (fishing_rod_animation_timer > 0) {fishing_rod_animation_timer -= 1} // count the timer down
+if (fishing_rod_animation_timer > 0 && not fishing_rod_out) {fishing_rod_animation_timer -= 1} // count the timer down
 	
-if (fishing_rod_animation_timer = 0) {fishing_rod_out = true} // update the variable
-else {fishing_rod_out = false}
+if (fishing_rod_animation_timer = fishing_rod_out_frame * 7) {fishing_rod_out = true} // update the variable
 
 frame_fishing_rod = sprite_get_number(spr_fishing_rod) - floor(fishing_rod_animation_timer / 7) - 1 // change the current frame to the timer
 

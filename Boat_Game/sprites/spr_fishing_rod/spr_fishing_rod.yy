@@ -30,6 +30,23 @@
     {"$GMSpriteFrame":"","%Name":"73c460c4-2783-4df6-9ccb-2d33ff91bf63","name":"73c460c4-2783-4df6-9ccb-2d33ff91bf63","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"74095298-b724-42f1-9ba6-901fb9e9a1bb","name":"74095298-b724-42f1-9ba6-901fb9e9a1bb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"8f61e63b-6a98-436a-9f70-c5bb3bf6c40b","name":"8f61e63b-6a98-436a-9f70-c5bb3bf6c40b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"6343347c-ed66-4a73-8788-7ac68d2084d9","name":"6343347c-ed66-4a73-8788-7ac68d2084d9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"2338d73b-a1d8-425a-86a4-b90434b54a34","name":"2338d73b-a1d8-425a-86a4-b90434b54a34","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"07aeb24a-b39e-49d6-a9de-57de5663a832","name":"07aeb24a-b39e-49d6-a9de-57de5663a832","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"d752352d-473e-43c8-aa1a-c6a6e2c58ff1","name":"d752352d-473e-43c8-aa1a-c6a6e2c58ff1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"aadf941e-c1af-4fc6-9fc5-af97aa73e273","name":"aadf941e-c1af-4fc6-9fc5-af97aa73e273","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"dac63d72-d76f-4a18-ad31-489d2a93d75d","name":"dac63d72-d76f-4a18-ad31-489d2a93d75d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"02e7a704-2596-46d0-aa35-c7e0dce9f56a","name":"02e7a704-2596-46d0-aa35-c7e0dce9f56a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"c6116bc1-a854-49d7-b2fa-ff73fa6b0f75","name":"c6116bc1-a854-49d7-b2fa-ff73fa6b0f75","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"90bb406a-4d04-4519-8b41-4a8cedef40a3","name":"90bb406a-4d04-4519-8b41-4a8cedef40a3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"7f86686e-fe20-49ca-88fe-e91982832bce","name":"7f86686e-fe20-49ca-88fe-e91982832bce","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"acab9417-72bc-4d8c-9456-ca626afc0b1f","name":"acab9417-72bc-4d8c-9456-ca626afc0b1f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"c83d9112-17f4-4df0-a3ca-df8d7014892e","name":"c83d9112-17f4-4df0-a3ca-df8d7014892e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"602d8932-0930-43c1-a4d7-50b3008f53dc","name":"602d8932-0930-43c1-a4d7-50b3008f53dc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"740049c9-b63b-4043-a8c2-de51d077df03","name":"740049c9-b63b-4043-a8c2-de51d077df03","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"a2bc7de5-919f-432d-beff-a7fe4df25f05","name":"a2bc7de5-919f-432d-beff-a7fe4df25f05","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"ee282a1c-48a5-4db0-9e47-0edcd249b136","name":"ee282a1c-48a5-4db0-9e47-0edcd249b136","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"456cd231-c8a6-41be-ae6b-855ba940fd49","name":"456cd231-c8a6-41be-ae6b-855ba940fd49","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -67,7 +84,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":18.0,
+    "length":35.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -140,6 +157,57 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8f61e63b-6a98-436a-9f70-c5bb3bf6c40b","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"cb6441f7-c910-432a-a9df-c29bb17e0615","IsCreationKey":false,"Key":17.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6343347c-ed66-4a73-8788-7ac68d2084d9","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"61981337-513d-4eb5-ac96-d6ddbb8c696a","IsCreationKey":false,"Key":18.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2338d73b-a1d8-425a-86a4-b90434b54a34","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"cef40c5b-633c-4f5d-879f-928a8c07ed52","IsCreationKey":false,"Key":19.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"07aeb24a-b39e-49d6-a9de-57de5663a832","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"66c0faec-9c8a-471d-a002-28b48c5fec2f","IsCreationKey":false,"Key":20.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d752352d-473e-43c8-aa1a-c6a6e2c58ff1","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"5c5d07da-dfb0-4b5e-9c23-25d32c343a5a","IsCreationKey":false,"Key":21.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"aadf941e-c1af-4fc6-9fc5-af97aa73e273","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"7755d018-d1cd-4192-8cde-5967b2148ecc","IsCreationKey":false,"Key":22.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"dac63d72-d76f-4a18-ad31-489d2a93d75d","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"a4657b00-9cfe-4a5f-8049-59400402740e","IsCreationKey":false,"Key":23.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"02e7a704-2596-46d0-aa35-c7e0dce9f56a","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"e3b80f55-251b-454c-a961-2533fa4c5ba8","IsCreationKey":false,"Key":24.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c6116bc1-a854-49d7-b2fa-ff73fa6b0f75","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"276701c7-2a53-47ef-a63c-4f2c34cfc73e","IsCreationKey":false,"Key":25.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"90bb406a-4d04-4519-8b41-4a8cedef40a3","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"e14b26bb-c054-43f7-aa08-39bf08669b51","IsCreationKey":false,"Key":26.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7f86686e-fe20-49ca-88fe-e91982832bce","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"0e2d96a8-6eea-44ea-964a-8601c3844cdb","IsCreationKey":false,"Key":27.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"acab9417-72bc-4d8c-9456-ca626afc0b1f","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"df752704-154d-431d-a972-4c01afde328c","IsCreationKey":false,"Key":28.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c83d9112-17f4-4df0-a3ca-df8d7014892e","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"2a0a75dd-8aef-43cc-bd95-9d4c9bb7871e","IsCreationKey":false,"Key":29.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"602d8932-0930-43c1-a4d7-50b3008f53dc","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"2dcb2983-1a81-4b23-9d6a-ab9bf3cc001b","IsCreationKey":false,"Key":30.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"740049c9-b63b-4043-a8c2-de51d077df03","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"80e30af2-c293-453a-835f-5b24a932938d","IsCreationKey":false,"Key":31.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a2bc7de5-919f-432d-beff-a7fe4df25f05","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"84689374-064f-4a84-a566-f46df17cb788","IsCreationKey":false,"Key":32.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ee282a1c-48a5-4db0-9e47-0edcd249b136","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"5138847e-60d2-4281-824c-1a11a08c5a2a","IsCreationKey":false,"Key":33.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"456cd231-c8a6-41be-ae6b-855ba940fd49","path":"sprites/spr_fishing_rod/spr_fishing_rod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"e50d3274-1134-483f-bc59-ce83b0b348b1","IsCreationKey":false,"Key":34.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
