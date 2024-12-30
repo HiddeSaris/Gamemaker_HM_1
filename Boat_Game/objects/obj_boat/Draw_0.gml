@@ -14,6 +14,18 @@ else
 	person_y = y + lengthdir_y(person_len, person_dir)
 	draw_sprite_ext(spr_person, frame_person, person_x, person_y, 1, 1, image_angle, c_white, 1)
 	draw_sprite_ext(spr_fishing_rod, frame_fishing_rod, person_x, person_y, 1, 1, image_angle, c_white, 1)
-	
-	//draw_line()
 }
+
+if (fishing_rod_out && !fishing_rod_out_prev) // when fishing rod out has changed to true
+{
+	animation_timer = 12 * sprite_get_number(spr_splash) // start the animation
+}
+if (animation_timer > 0)
+{
+	animation_timer -= 1
+	animation_frame = sprite_get_number(spr_splash) - floor(animation_timer / 12)
+	draw_sprite_ext(spr_splash, animation_frame, bobber_x, bobber_y, 1, 1, image_angle, c_white, 1)
+}
+
+fishing_rod_out_prev = fishing_rod_out
+fishing_rod_in_prev = fishing_rod_in

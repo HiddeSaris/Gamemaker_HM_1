@@ -190,8 +190,8 @@ if (keyboard_check_pressed(ord("E"))) // go to fishing pos
 bobber_dir = point_direction(sprite_get_xoffset(spr_fishing_rod), sprite_get_yoffset(spr_fishing_rod), 0, 0) + image_angle
 bobber_len = point_distance(sprite_get_xoffset(spr_fishing_rod), sprite_get_yoffset(spr_fishing_rod), 0, 0)
 
-bobber_x = x + lengthdir_x(bobber_len, bobber_dir)
-bobber_y = y + lengthdir_y(bobber_len, bobber_dir)
+bobber_x = person_x + lengthdir_x(bobber_len, bobber_dir)
+bobber_y = person_y + lengthdir_y(bobber_len, bobber_dir)
 
 var _bobber_tilemap = tilemap_get_at_pixel(_tilemap, bobber_x, bobber_y);
 
@@ -213,24 +213,29 @@ if (image_index >= image_number - 1) // last frame of the walking animation
 
 if (keyboard_check_pressed(vk_space) && fishing && bobber_in_water) // if want to fish
 {
-	if (not fishing_rod_out) // cast rod
+	if (fishing_rod_in) // cast rod
 	{
+		fishing_rod_in = false
 		fishing_rod_animation_timer = 7 * (sprite_get_number(spr_fishing_rod) - 1) // set the animation timer
 	}
-	else
+	else if (fishing_rod_out)
 	{
 		// pull the rod out of the water
 		fishing_rod_out = false
 	}
 }
-else if (keyboard_check_pressed(vk_space) && not bobber_in_water)
+else if (keyboard_check_pressed(vk_space) && fishing && not bobber_in_water)
 {
 	show_message("did you know you have to fish in water, you learn something new every day.")
 }
 
 if (fishing_rod_animation_timer > 0 && not fishing_rod_out) {fishing_rod_animation_timer -= 1} // count the timer down
+if (fishing_rod_animation_timer = 0){fishing_rod_in = true}
 	
-if (fishing_rod_animation_timer = fishing_rod_out_frame * 7) {fishing_rod_out = true} // update the variable
+if (fishing_rod_animation_timer = fishing_rod_out_frame * 7) 
+{
+	fishing_rod_out = true // update the variable
+} 
 
 frame_fishing_rod = sprite_get_number(spr_fishing_rod) - floor(fishing_rod_animation_timer / 7) - 1 // change the current frame to the timer
 

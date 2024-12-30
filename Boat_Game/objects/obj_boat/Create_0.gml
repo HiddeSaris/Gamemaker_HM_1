@@ -24,7 +24,10 @@ respawn_rot = image_angle
 respawn_screen = false // is the respawn screen on
 
 fishing = false // is player fishing
+fishing_rod_in = true // is the rod not thrown
+fishing_rod_in_prev = true // was the rod not thrown the previous frame
 fishing_rod_out = false // is the bobber in the water
+fishing_rod_out_prev = false // was the bobber in the water the previous frame
 image_speed = 0 // so the animation stops until i want it to start
 
 fishing_rod_dir = point_direction(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), fishing_rod_pos_boats[cur_boat][0], fishing_rod_pos_boats[cur_boat][1]) + image_angle
@@ -44,6 +47,9 @@ bobber_y = 0
 // calculating where the bobber is
 
 bobber_in_water = true
+
+animation_timer = -1
+animation_frame = sprite_get_number(spr_splash) - floor(animation_timer / 12)
 
 frame_person = 0 // what is the current frame of the animation of the person
 frame_fishing_rod = 0 // what is the current frame of the animation of the fishing rod
