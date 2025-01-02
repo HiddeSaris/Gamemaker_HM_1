@@ -1,15 +1,15 @@
 
-#macro drop_object 0 // the object of the fish
-#macro drop_chance 1 // the chance to catch the fish
-#macro drop_price 2 // the price to sell the fish
+#macro drop_sprite 0 // the sprite of the fish
+#macro drop_name 1 // the name of the fish
+#macro drop_chance 2 // the chance to catch the fish
+#macro drop_price 3 // the price to sell the fish
 
 
 // different drop tables
 enum drop_tables 
 {
 	regular,
-	special,
-	total
+	special
 }
 
 
@@ -39,111 +39,141 @@ enum fish
 	trout,
 	tuna,
 	whitefish,
+	total
 }
 
 // make a 2d array with all the information per fish
-fish_catalogue[1, drop_tables.total] = 0 
+for (var _i = 0; _i < fish.total; _i++)
+{
+	for (var _j = 0; _j < 3; _j++)
+	{
+		fish_catalogue[_i, _j] = -1
+	}
+}
 
 #region FISH CATALOGUE
 
-fish_catalogue[@ drop_object, fish.anchovy] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.anchovy] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.anchovy] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.anchovy, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.anchovy, drop_name  ] = "anchovy" // name of the fish
+fish_catalogue[@ fish.anchovy, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.anchovy, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.bass] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.bass] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.bass] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.bass, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.bass, drop_name  ] = "bass" // name of the fish
+fish_catalogue[@ fish.bass, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.bass, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.carp] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.carp] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.carp] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.carp, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.carp, drop_name  ] = "carp" // name of the fish
+fish_catalogue[@ fish.carp, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.carp, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.catfish] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.catfish] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.catfish] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.catfish, drop_sprite] = 	// sprite of that fish
+fish_catalogue[@ fish.catfish, drop_name  ] = "catfish" // name of the fish
+fish_catalogue[@ fish.catfish, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.catfish, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.clam] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.clam] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.clam] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.clam, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.clam, drop_name  ] = "clam" // name of the fish
+fish_catalogue[@ fish.clam, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.clam, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.cod] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.cod] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.cod] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.cod, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.cod, drop_name  ] = "cod" // name of the fish
+fish_catalogue[@ fish.cod, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.cod, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.crab] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.crab] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.crab] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.crab, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.crab, drop_name  ] = "crab" // name of the fish
+fish_catalogue[@ fish.crab, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.crab, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.eel] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.eel] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.eel] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.eel, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.eel, drop_name  ] = "eel" // name of the fish
+fish_catalogue[@ fish.eel, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.eel, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.herring] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.herring] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.herring] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.herring, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.herring, drop_name  ] = "herring" // name of the fish
+fish_catalogue[@ fish.herring, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.herring, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.lobster] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.lobster] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.lobster] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.lobster, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.lobster, drop_name  ] = "lobster" // name of the fish
+fish_catalogue[@ fish.lobster, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.lobster, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.octopus] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.octopus] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.octopus] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.octopus, drop_sprite] = 	// sprite of that fish
+fish_catalogue[@ fish.octopus, drop_name  ] = "octopus" // name of the fish
+fish_catalogue[@ fish.octopus, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.octopus, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.oyster] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.oyster] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.oyster] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.oyster, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.oyster, drop_name  ] = "oyster" // name of the fish
+fish_catalogue[@ fish.oyster, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.oyster, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.perch] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.perch] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.perch] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.perch, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.perch, drop_name  ] = "perch" // name of the fish
+fish_catalogue[@ fish.perch, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.perch, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.salmon] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.salmon] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.salmon] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.salmon, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.salmon, drop_name  ] = "salmon" // name of the fish
+fish_catalogue[@ fish.salmon, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.salmon, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.sardine] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.sardine] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.sardine] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.sardine, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.sardine, drop_name  ] = "sardine" // name of the fish
+fish_catalogue[@ fish.sardine, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.sardine, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.shark] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.shark] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.shark] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.shark, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.shark, drop_name  ] = "shark" // name of the fish
+fish_catalogue[@ fish.shark, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.shark, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.shrimp] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.shrimp] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.shrimp] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.shrimp, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.shrimp, drop_name  ] = "shrimp" // name of the fish
+fish_catalogue[@ fish.shrimp, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.shrimp, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.squid] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.squid] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.squid] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.squid, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.squid, drop_name  ] = "squid" // name of the fish
+fish_catalogue[@ fish.squid, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.squid, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.sturgeon] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.sturgeon] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.sturgeon] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.sturgeon, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.sturgeon, drop_name  ] = "sturgeon" // name of the fish
+fish_catalogue[@ fish.sturgeon, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.sturgeon, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.swordfish] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.swordfish] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.swordfish] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.swordfish, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.swordfish, drop_name  ] = "swordfish" // name of the fish
+fish_catalogue[@ fish.swordfish, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.swordfish, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.trout] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.trout] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.trout] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.trout, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.trout, drop_name  ] = "trout" // name of the fish
+fish_catalogue[@ fish.trout, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.trout, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.tuna] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.tuna] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.tuna] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.tuna, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.tuna, drop_name  ] = "tuna" // name of the fish
+fish_catalogue[@ fish.tuna, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.tuna, drop_price ] = 1 // coins you get from selling this fish
 
-fish_catalogue[@ drop_object, fish.whitefish] = 	// obj of that fish
-fish_catalogue[@ drop_chance, fish.whitefish] = 10 // percent chance that this fish is catched
-fish_catalogue[@ drop_price , fish.whitefish] = 1 // coins you get from selling this fish
+fish_catalogue[@ fish.whitefish, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.whitefish, drop_name  ] = "whitefish" // name of the fish
+fish_catalogue[@ fish.whitefish, drop_chance] = 10 // percent chance that this fish is catched
+fish_catalogue[@ fish.whitefish, drop_price ] = 1 // coins you get from selling this fish
 
 #endregion
 
 // drop table content
 // put fish indicies into arrays and use those arrays as tables for the fishing loot pool 
 
-drop_table_regular = [fish.cod, fish.salmon] // what fish you can catch in this droptable
+drop_table_regular = [fish.cod, fish.salmon, fish.anchovy] // what fish you can catch in this droptable
 drop_table_special = [fish.swordfish, fish.shark]
 
 // index of all tables

@@ -23,6 +23,7 @@ respawn_rot = image_angle
 
 respawn_screen = false // is the respawn screen on
 
+catched_fish = fish_drop(100, drop_tables.regular) // the fish that you catch
 fishing = false // is player fishing
 fishing_rod_in = true // is the rod not thrown
 fishing_rod_in_prev = true // was the rod not thrown the previous frame
