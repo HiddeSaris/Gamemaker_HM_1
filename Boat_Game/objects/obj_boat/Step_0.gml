@@ -224,6 +224,7 @@ if (keyboard_check_pressed(vk_space) && fishing && bobber_in_water) // if want t
 	{
 		fishing_rod_out = false
 		catched_fish = fish_drop(100, drop_tables.regular)
+		array_push(fish_in_inventory, catched_fish)
 	}
 }
 else if (keyboard_check_pressed(vk_space) && fishing && not bobber_in_water)

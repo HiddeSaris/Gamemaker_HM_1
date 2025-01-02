@@ -25,6 +25,7 @@ enum fish
 	crab,
 	eel,
 	herring,
+	junk,
 	lobster,
 	octopus,
 	oyster,
@@ -97,6 +98,11 @@ fish_catalogue[@ fish.herring, drop_sprite] = noone	// sprite of that fish
 fish_catalogue[@ fish.herring, drop_name  ] = "herring" // name of the fish
 fish_catalogue[@ fish.herring, drop_chance] = 10 // percent chance that this fish is catched
 fish_catalogue[@ fish.herring, drop_price ] = 1 // coins you get from selling this fish
+
+fish_catalogue[@ fish.junk, drop_sprite] = noone	// sprite of that fish
+fish_catalogue[@ fish.junk, drop_name  ] = "junk" // name of the fish
+fish_catalogue[@ fish.junk, drop_chance] = 30 // percent chance that this fish is catched
+fish_catalogue[@ fish.junk, drop_price ] = 1 // coins you get from selling this fish
 
 fish_catalogue[@ fish.lobster, drop_sprite] = noone	// sprite of that fish
 fish_catalogue[@ fish.lobster, drop_name  ] = "lobster" // name of the fish
@@ -173,7 +179,7 @@ fish_catalogue[@ fish.whitefish, drop_price ] = 1 // coins you get from selling 
 // drop table content
 // put fish indicies into arrays and use those arrays as tables for the fishing loot pool 
 
-drop_table_regular = [fish.cod, fish.salmon, fish.anchovy] // what fish you can catch in this droptable
+drop_table_regular = [fish.cod, fish.salmon, fish.carp, fish.bass, fish.junk] // what fish you can catch in this droptable
 drop_table_special = [fish.swordfish, fish.shark]
 
 // index of all tables

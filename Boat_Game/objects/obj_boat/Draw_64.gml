@@ -3,7 +3,8 @@ draw_text_transformed(0, 40, "anchor: " + string(anchor), 3, 3, 0)
 draw_text_transformed(0, 80, "fishing: " + string(fishing), 3, 3, 0)
 draw_text_transformed(0, 120, "fishing rod out: " + string(fishing_rod_out), 3, 3, 0)
 draw_text_transformed(0, 160, "fishing rod in: " + string(fishing_rod_in), 3, 3, 0)
-draw_text_transformed(0, 200, "fish: " + string(catched_fish), 3, 3, 0)
+draw_text_transformed(0, 200, "catched fish: " + string(catched_fish), 3, 3, 0)
+draw_text_transformed(0, 240, "fish: " + string(fish_in_inventory), 3, 3, 0)
 
 if respawn_screen
 {
