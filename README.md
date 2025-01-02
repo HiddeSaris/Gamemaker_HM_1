@@ -1,2 +1,2 @@
 # Gamemaker_HM_1
-Game
+Game about fishing
