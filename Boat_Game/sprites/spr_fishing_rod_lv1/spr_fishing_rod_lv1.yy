@@ -53,8 +53,8 @@
   "height":2,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"bc518843-3b80-4a20-b61f-cd0ca84f3c6c","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"bc518843-3b80-4a20-b61f-cd0ca84f3c6c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"74e423cd-5e4b-494c-86a7-6bbd21915b23","blendMode":0,"displayName":"default","isLocked":false,"name":"74e423cd-5e4b-494c-86a7-6bbd21915b23","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"bc518843-3b80-4a20-b61f-cd0ca84f3c6c","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"bc518843-3b80-4a20-b61f-cd0ca84f3c6c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_fishing_rod_lv1",
   "nineSlice":null,
