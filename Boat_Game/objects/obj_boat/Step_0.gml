@@ -190,8 +190,8 @@ if (keyboard_check_pressed(ord("E")))
 
 
 // calculating the bobbers position
-bobber_dir = point_direction(sprite_get_xoffset(spr_fishing_rod_lv1), sprite_get_yoffset(spr_fishing_rod_lv1), 0, 0) + image_angle
-bobber_len = point_distance(sprite_get_xoffset(spr_fishing_rod_lv1), sprite_get_yoffset(spr_fishing_rod_lv1), 0, 0)
+bobber_dir = point_direction(sprite_get_xoffset(spr_fishing_rod_lv0), sprite_get_yoffset(spr_fishing_rod_lv0), 0, 0) + image_angle
+bobber_len = point_distance(sprite_get_xoffset(spr_fishing_rod_lv0), sprite_get_yoffset(spr_fishing_rod_lv0), 0, 0)
 
 bobber_x = person_x + lengthdir_x(bobber_len, bobber_dir)
 bobber_y = person_y + lengthdir_y(bobber_len, bobber_dir)
@@ -222,7 +222,7 @@ if (keyboard_check_pressed(vk_space) && fishing && bobber_in_water) // if want t
 	if (fishing_rod_in) // cast rod
 	{
 		fishing_rod_in = false
-		fishing_rod_animation_timer = 7 * (sprite_get_number(spr_fishing_rod_lv1) - 1) // set the animation timer
+		fishing_rod_animation_timer = 7 * (sprite_get_number(spr_fishing_rod_lv0) - 1) // set the animation timer
 	}
 	else if (fishing_rod_out)// pull the rod out of the water
 	{

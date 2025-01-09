@@ -3,7 +3,7 @@
   "%Name":"spr_fishing_rod_lv2",
   "bboxMode":0,
   "bbox_bottom":1,
-  "bbox_left":16,
+  "bbox_left":15,
   "bbox_right":29,
   "bbox_top":0,
   "collisionKind":1,
