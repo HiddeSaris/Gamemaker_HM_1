@@ -13,7 +13,7 @@ resistance = 1 - (acceleration / (max_speed + acceleration)) // number 0 - 1, 0.
 anchor = false
 
 cur_fishing_rod = 0
-fishing_rods = [spr_fishing_rod_lv1, spr_fishing_rod_lv2]
+fishing_rods = [spr_fishing_rod_lv0, spr_fishing_rod_lv1, spr_fishing_rod_lv2]
 
 cur_boat = 0 // the current boat (index of the list boats)
 boats = [spr_houte_bootje, spr_kleine_vissers_boot, spr_middel_vissers_boot, spr_grote_vissers_boot, spr_speedboot] // all the boats in order of switching
