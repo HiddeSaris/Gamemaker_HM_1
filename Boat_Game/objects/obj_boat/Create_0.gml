@@ -17,7 +17,7 @@ fishing_rods = [spr_fishing_rod_lv0, spr_fishing_rod_lv1, spr_fishing_rod_lv2]
 
 cur_boat = 0 // the current boat (index of the list boats)
 boats = [spr_houte_bootje, spr_kleine_vissers_boot, spr_middel_vissers_boot, spr_grote_vissers_boot, spr_speedboot] // all the boats in order of switching
-fishing_rod_pos_boats = [[5, 13], [5, 32], [3, 38], [3, 49], [3, 30]] // where is the fishing rod lying per boat
+fishing_rod_pos_boats = [[5, 11], [5, 32], [3, 38], [3, 49], [3, 30]] // where is the fishing rod lying per boat
 person_pos_boats = [[3, 24], [4, 37], [5, 42], [9, 51], [2, 33]] // where is the person fishing per boat
 
 respawn_x = x // where to respawn (default is where it begins)
