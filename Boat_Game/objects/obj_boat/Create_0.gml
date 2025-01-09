@@ -42,8 +42,8 @@ person_x = 0
 person_y = 0
 // calculating where the person has to be drawn
 
-bobber_dir = point_direction(sprite_get_xoffset(spr_fishing_rod_lv1), sprite_get_yoffset(spr_fishing_rod_lv1), 0, 0) + image_angle
-bobber_len = point_distance(sprite_get_xoffset(spr_fishing_rod_lv1), sprite_get_yoffset(spr_fishing_rod_lv1), 0, 0)
+bobber_dir = point_direction(sprite_get_xoffset(spr_fishing_rod_lv0), sprite_get_yoffset(spr_fishing_rod_lv0), 0, 0) + image_angle
+bobber_len = point_distance(sprite_get_xoffset(spr_fishing_rod_lv0), sprite_get_yoffset(spr_fishing_rod_lv0), 0, 0)
 bobber_x = 0
 bobber_y = 0
 // calculating where the bobber is
