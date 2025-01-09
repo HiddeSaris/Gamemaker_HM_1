@@ -164,6 +164,7 @@ else if (anchor)
 
 #region FISHING
 
+
 // go to fishing pos
 if (keyboard_check_pressed(ord("E"))) 
 {
@@ -187,6 +188,7 @@ if (keyboard_check_pressed(ord("E")))
 	}
 }
 
+
 // calculating the bobbers position
 bobber_dir = point_direction(sprite_get_xoffset(spr_fishing_rod_lv1), sprite_get_yoffset(spr_fishing_rod_lv1), 0, 0) + image_angle
 bobber_len = point_distance(sprite_get_xoffset(spr_fishing_rod_lv1), sprite_get_yoffset(spr_fishing_rod_lv1), 0, 0)
@@ -205,12 +207,14 @@ else
 	bobber_in_water = true
 }
 
+
 // last frame of the walking animation
 if (image_index >= image_number - 1) 
 {
 	fishing = true // now able to fish
 	image_speed = 0 // stop the animation
 }
+
 
 // throwing out the fishing rod
 if (keyboard_check_pressed(vk_space) && fishing && bobber_in_water) // if want to fish
@@ -232,6 +236,7 @@ else if (keyboard_check_pressed(vk_space) && fishing && not bobber_in_water)
 	show_message("did you know you have to fish in water, you learn something new every day.")
 }
 
+
 // fishing rod animation
 if (fishing_rod_animation_timer > 0 && not fishing_rod_out) {fishing_rod_animation_timer -= 1} // count the timer down
 if (fishing_rod_animation_timer = 0){fishing_rod_in = true}
@@ -241,5 +246,6 @@ if (fishing_rod_animation_timer = fishing_rod_out_frame * 7)
 	fishing_rod_out = true // update the variable
 } 
 frame_fishing_rod = sprite_get_number(spr_fishing_rod_lv1) - floor(fishing_rod_animation_timer / 7) - 1 // change the current frame to the timer
+
 
 #endregion
