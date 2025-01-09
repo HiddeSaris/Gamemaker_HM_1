@@ -245,7 +245,19 @@ if (fishing_rod_animation_timer = fishing_rod_out_frame * 7)
 {
 	fishing_rod_out = true // update the variable
 } 
-frame_fishing_rod = sprite_get_number(spr_fishing_rod_lv1) - floor(fishing_rod_animation_timer / 7) - 1 // change the current frame to the timer
+frame_fishing_rod = sprite_get_number(fishing_rods[cur_fishing_rod]) - floor(fishing_rod_animation_timer / 7) - 1 // change the current frame to the timer
 
+// switching between different fishing rods
+if (keyboard_check_pressed(ord("G")))
+{
+	if (cur_fishing_rod = array_length(fishing_rods) - 1) // If its the last boat
+	{
+		cur_fishing_rod = 0
+	}
+	else
+	{
+		cur_fishing_rod += 1
+	}
+}
 
 #endregion
