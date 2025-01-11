@@ -121,7 +121,7 @@ move_wrap(true, true, -16)
 
 #region COLLISION
 
-var _tilemap = layer_tilemap_get_id("Tiles_1")
+var _tilemap = layer_tilemap_get_id("Collision_layer")
 
 // Bbox coords
 var _left = bbox_left + hspeed;
@@ -135,7 +135,7 @@ var _top_right = tilemap_get_at_pixel(_tilemap, _right, _top);
 var _bottom_left = tilemap_get_at_pixel(_tilemap, _left, _bottom);
 var _bottom_right = tilemap_get_at_pixel(_tilemap, _right, _bottom);
 
-if (_top_left != 8 || _top_right != 8 || _bottom_left != 8 || _bottom_right != 8) // if you touch land
+if (_top_left != 16 || _top_right != 16 || _bottom_left != 16 || _bottom_right != 16) // if you touch land
 {
 	respawn_boat()
 }
