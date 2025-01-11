@@ -64,6 +64,18 @@ if (keyboard_check_pressed(ord("Q")))
 	fishing_rod_dir = point_direction(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), fishing_rod_pos_boats[cur_boat][0], fishing_rod_pos_boats[cur_boat][1])
 	fishing_rod_len = point_distance(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), fishing_rod_pos_boats[cur_boat][0], fishing_rod_pos_boats[cur_boat][1])
 	// update rod position
+	
+	person_dir = point_direction(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), person_pos_boats[cur_boat][0], person_pos_boats[cur_boat][1]) + image_angle
+	person_len = point_distance(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), person_pos_boats[cur_boat][0], person_pos_boats[cur_boat][1])
+	person_x = x + lengthdir_x(person_len, person_dir)
+	person_y = y + lengthdir_y(person_len, person_dir)
+	// update person position
+	
+	bobber_dir = point_direction(sprite_get_xoffset(spr_fishing_rod_lv0), sprite_get_yoffset(spr_fishing_rod_lv0), 0, 0) + image_angle
+	bobber_len = point_distance(sprite_get_xoffset(spr_fishing_rod_lv0), sprite_get_yoffset(spr_fishing_rod_lv0), 0, 0)
+	bobber_x = person_x + lengthdir_x(bobber_len, bobber_dir)
+	bobber_y = person_y + lengthdir_y(bobber_len, bobber_dir)
+	// update bobber position
 }
 
 #endregion
@@ -122,8 +134,7 @@ move_wrap(true, true, -16)
 #region COLLISION
 
 var _tilemap = layer_tilemap_get_id("Collision_layer")
-
-// Bbox coords
+/* // Bbox coords
 var _left = bbox_left + hspeed;
 var _top = bbox_top + vspeed;
 var _right = bbox_right + hspeed;
@@ -138,7 +149,31 @@ var _bottom_right = tilemap_get_at_pixel(_tilemap, _right, _bottom);
 if (_top_left != 16 || _top_right != 16 || _bottom_left != 16 || _bottom_right != 16) // if you touch land
 {
 	respawn_boat()
+} */
+
+// Check collision
+var _top_left_h = tilemap_get_at_pixel(_tilemap, bbox_left + hspeed, bbox_top + hspeed);
+var _top_right_h = tilemap_get_at_pixel(_tilemap, bbox_right + hspeed, bbox_top + hspeed);
+var _bottom_left_h = tilemap_get_at_pixel(_tilemap, bbox_left + hspeed, bbox_bottom + hspeed);
+var _bottom_right_h = tilemap_get_at_pixel(_tilemap, bbox_right + hspeed, bbox_bottom + hspeed);
+
+// Check collision
+var _top_left_v = tilemap_get_at_pixel(_tilemap, bbox_left + vspeed, bbox_top + vspeed);
+var _top_right_v = tilemap_get_at_pixel(_tilemap, bbox_right + vspeed, bbox_top + vspeed);
+var _bottom_left_v = tilemap_get_at_pixel(_tilemap, bbox_left + vspeed, bbox_bottom + vspeed);
+var _bottom_right_v = tilemap_get_at_pixel(_tilemap, bbox_right + vspeed, bbox_bottom + vspeed);
+
+if (_top_left_h != 16 || _top_right_h != 16 || _bottom_left_h != 16 || _bottom_right_h != 16)// && abs(speed) > 0.1 // if you touch land
+{
+	hspeed = 0
+	turning_speed = 0
 }
+if (_top_left_v != 16 || _top_right_v != 16 || _bottom_left_v != 16 || _bottom_right_v != 16)// && abs(speed) > 0.1 // if you touch land
+{
+	vspeed = 0
+	turning_speed = 0
+}
+
 #endregion
 
 #region ANCHOR
@@ -172,14 +207,17 @@ if (keyboard_check_pressed(ord("E")))
 	{
 		if (not fishing)
 		{
+			wanting_to_fish = true
+			steering = false
 			image_speed = 1 // walk to fishing position
 			fishing_rod_animation_timer = -1
 		}
 		else if (not fishing_rod_out)
 		{
 			fishing = false
-			image_speed = 0 // stop the animation
-			image_index = 0 // go back to steering position
+			wanting_to_steer = true
+			image_speed = 1 // stop the animation
+			//image_index = 0 // go back to steering position
 		}
 	}
 	else
@@ -198,7 +236,7 @@ bobber_y = person_y + lengthdir_y(bobber_len, bobber_dir)
 
 var _bobber_tilemap = tilemap_get_at_pixel(_tilemap, bobber_x, bobber_y);
 
-if (_bobber_tilemap != 8) // if you touch land
+if (_bobber_tilemap != 16) // if you touch land
 {
 	bobber_in_water = false
 }
@@ -208,13 +246,22 @@ else
 }
 
 
-// last frame of the walking animation
-if (image_index >= image_number - 1) 
+// frame of the walking animation when at fishing pos
+if (image_index >= fishing_frame_boats[cur_boat] && !wanting_to_steer) 
 {
+	wanting_to_fish = false
 	fishing = true // now able to fish
 	image_speed = 0 // stop the animation
 }
 
+
+// last frame of the walking animation
+if (image_index <= 1 && !wanting_to_fish) 
+{
+	wanting_to_steer = false
+	steering = true // now able to steer
+	image_speed = 0 // stop the animation
+}
 
 // throwing out the fishing rod
 if (keyboard_check_pressed(vk_space) && fishing && bobber_in_water) // if want to fish
