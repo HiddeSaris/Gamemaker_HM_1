@@ -4,7 +4,7 @@
 
 // setting up all the data that differs per boat
 
-if (cur_boat = 0) // houte boot
+if (cur_boat = 0) // houten boot
 {
 	max_speed = 0.5
 	acceleration = 0.001  
@@ -163,12 +163,12 @@ var _top_right_v = tilemap_get_at_pixel(_tilemap, bbox_right + vspeed, bbox_top 
 var _bottom_left_v = tilemap_get_at_pixel(_tilemap, bbox_left + vspeed, bbox_bottom + vspeed);
 var _bottom_right_v = tilemap_get_at_pixel(_tilemap, bbox_right + vspeed, bbox_bottom + vspeed);
 
-if (_top_left_h != 16 || _top_right_h != 16 || _bottom_left_h != 16 || _bottom_right_h != 16)// && abs(speed) > 0.1 // if you touch land
+if (_top_left_h != 16 || _top_right_h != 16 || _bottom_left_h != 16 || _bottom_right_h != 16) // if you touch land
 {
 	hspeed = 0
 	turning_speed = 0
 }
-if (_top_left_v != 16 || _top_right_v != 16 || _bottom_left_v != 16 || _bottom_right_v != 16)// && abs(speed) > 0.1 // if you touch land
+if (_top_left_v != 16 || _top_right_v != 16 || _bottom_left_v != 16 || _bottom_right_v != 16) // if you touch land
 {
 	vspeed = 0
 	turning_speed = 0
@@ -264,12 +264,11 @@ if (image_index <= 1 && !wanting_to_fish)
 }
 
 // throwing out the fishing rod
-if (keyboard_check_pressed(vk_space) && fishing && bobber_in_water) // if want to fish
+if ((mouse_check_button(mb_left) or keyboard_check(vk_space)) && fishing && bobber_in_water)
 {
-	if (fishing_rod_in) // cast rod
+	if (fishing_rod_in)
 	{
-		fishing_rod_in = false
-		fishing_rod_animation_timer = 7 * (sprite_get_number(spr_fishing_rod_lv0) - 1) // set the animation timer
+		rod_casting_value++
 	}
 	else if (fishing_rod_out)// pull the rod out of the water
 	{
@@ -282,17 +281,33 @@ else if (keyboard_check_pressed(vk_space) && fishing && not bobber_in_water)
 {
 	show_message("did you know you have to fish in water, you learn something new every day.")
 }
+else 
+{
+	rod_casting_value = 0
+}
 
+if (rod_casting_value >= rod_casting_time) // if want to fish
+{
+	rod_casting_value = 0
+	fishing_rod_in = false // cast rod
+	fishing_rod_animation_timer = 7 * (sprite_get_number(spr_fishing_rod_lv0) - 1) // set the animation timer
+}
 
 // fishing rod animation
 if (fishing_rod_animation_timer > 0 && not fishing_rod_out) {fishing_rod_animation_timer -= 1} // count the timer down
 if (fishing_rod_animation_timer = 0){fishing_rod_in = true}
-	
+frame_fishing_rod = sprite_get_number(fishing_rods[cur_fishing_rod]) - floor(fishing_rod_animation_timer / 7) - 1 // change the current frame to the timer	
+
 if (fishing_rod_animation_timer = fishing_rod_out_frame * 7) 
 {
 	fishing_rod_out = true // update the variable
 } 
-frame_fishing_rod = sprite_get_number(fishing_rods[cur_fishing_rod]) - floor(fishing_rod_animation_timer / 7) - 1 // change the current frame to the timer
+if (fishing_rod_out && !fishing_rod_out_prev) // when fishing rod out has changed to true
+{
+	part_type_orientation(global.pt_water_ripple, image_angle, image_angle, 0, 0, false)
+	part_particles_create(global.p_system, bobber_x, bobber_y, global.pt_water_ripple, 1)
+}
+
 
 // switching between different fishing rods
 if (keyboard_check_pressed(ord("R")))

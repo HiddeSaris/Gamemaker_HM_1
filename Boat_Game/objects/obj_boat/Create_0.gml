@@ -65,3 +65,10 @@ frame_fishing_rod = 0 // what is the current frame of the animation of the fishi
 
 fishing_rod_animation_timer = -1 // a timer to calculate what frame to draw of the fishing rod animation
 fishing_rod_out_frame = 17 // the frame that the bobber is out and so the animation has to be stopped
+
+rod_casting_value = 0 // the timer to cast the rod
+rod_casting_time = 1 * 60 // the time in steps it takes to cast the rod
+
+global.p_system = part_system_create_layer("Particle_Layer", true)
+global.pt_water_ripple = part_type_create()
+part_type_sprite(global.pt_water_ripple, spr_splash, true, 1, false)
