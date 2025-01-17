@@ -42,6 +42,7 @@
     {"id":{"name":"obj_button_quit","path":"objects/obj_button_quit/obj_button_quit.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"obj_loot_table","path":"objects/obj_loot_table/obj_loot_table.yy",},},
+    {"id":{"name":"ParticleSystem1","path":"particles/ParticleSystem1/ParticleSystem1.yy",},},
     {"id":{"name":"island_base","path":"rooms/island_base/island_base.yy",},},
     {"id":{"name":"island1","path":"rooms/island1/island1.yy",},},
     {"id":{"name":"world_map","path":"rooms/world_map/world_map.yy",},},
