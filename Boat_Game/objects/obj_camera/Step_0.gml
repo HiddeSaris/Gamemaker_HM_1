@@ -11,8 +11,8 @@ if (follow != noone)
 	yto = follow.y
 }
 
-x += (xto - x)/25
-y += (yto - y)/25
+x += (xto - x) / 25
+y += (yto - y) / 25
 
 camera_set_view_pos(_cam, x - (_cam_width * 0.5), y - (_cam_height * 0.5));
 

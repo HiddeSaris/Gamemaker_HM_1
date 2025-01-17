@@ -7,41 +7,47 @@
 if (cur_boat = 0) // houten boot
 {
 	max_speed = 0.5
-	acceleration = 0.001  
+	acceleration = 0.002  
 	turning_acceleration = 0.025 
-	resistance = 1 - (acceleration / (max_speed + acceleration))
+	resistance_1 = 1 - (acceleration / (max_speed + acceleration))
+	resistance_2 = power(resistance_1, 8)
+	resistance_3 = power(resistance_1, 16)
 }
 else if (cur_boat = 1) // kleine vissersboot
 {
 	max_speed = 1
 	acceleration = 0.002
 	turning_acceleration = 0.020
-	
-	resistance = 1 - (acceleration / (max_speed + acceleration))
+	resistance_1 = 1 - (acceleration / (max_speed + acceleration))
+	resistance_2 = power(resistance_1, 16)
+	resistance_3 = power(resistance_1, 32)
 }
 else if (cur_boat = 2) // middel vissersboot
 {
 	max_speed = 1.5
 	acceleration = 0.001
 	turning_acceleration = 0.010
-	
-	resistance = 1 - (acceleration / (max_speed + acceleration))
+	resistance_1 = 1 - (acceleration / (max_speed + acceleration))
+	resistance_2 = power(resistance_1, 16)
+	resistance_3 = power(resistance_1, 32)
 }
 else if (cur_boat = 3) // grote vissersboot
 {
 	max_speed = 2
 	acceleration = 0.001
 	turning_acceleration = 0.010
-	
-	resistance = 1 - (acceleration / (max_speed + acceleration))
+	resistance_1 = 1 - (acceleration / (max_speed + acceleration))
+	resistance_2 = power(resistance_1, 16)
+	resistance_3 = power(resistance_1, 32)
 }
 else if (cur_boat = 4) // speedboat
 {
 	max_speed = 3
 	acceleration = 0.004
 	turning_acceleration = 0.03
-	
-	resistance = 1 - (acceleration / (max_speed + acceleration))
+	resistance_1 = 1 - (acceleration / (max_speed + acceleration))
+	resistance_2 = power(resistance_1, 16)
+	resistance_3 = power(resistance_1, 32)
 }
 
 #endregion
@@ -84,12 +90,12 @@ if (keyboard_check_pressed(ord("Q")))
 
 #region MOVEMENT
 
-speed *= resistance // slow boat down with resistance
+//speed *= resistance_1 // slow boat down with resistance
 
 motion_set(image_angle + 90, speed)
 
 image_angle += turning_speed
-turning_speed *= resistance / 1.01
+turning_speed *= resistance_1 / 1.01
 
 
 if (keyboard_check(ord("W")) && !anchor)
@@ -134,7 +140,7 @@ move_wrap(true, true, -16)
 #region COLLISION
 
 var _tilemap = layer_tilemap_get_id("Collision_layer")
-/* // Bbox coords
+/*// Bbox coords
 var _left = bbox_left + hspeed;
 var _top = bbox_top + vspeed;
 var _right = bbox_right + hspeed;
@@ -149,7 +155,7 @@ var _bottom_right = tilemap_get_at_pixel(_tilemap, _right, _bottom);
 if (_top_left != 16 || _top_right != 16 || _bottom_left != 16 || _bottom_right != 16) // if you touch land
 {
 	respawn_boat()
-} */
+} 
 
 // Check collision
 var _top_left_h = tilemap_get_at_pixel(_tilemap, bbox_left + hspeed, bbox_top + hspeed);
@@ -172,6 +178,26 @@ if (_top_left_v != 16 || _top_right_v != 16 || _bottom_left_v != 16 || _bottom_r
 {
 	vspeed = 0
 	turning_speed = 0
+}
+*/
+
+var _tile = tilemap_get_at_pixel(_tilemap, x + hspeed, y + vspeed);
+
+if (_tile == 16) // if you touch land
+{
+	speed *= resistance_1
+}
+else if (_tile == 2)
+{
+	speed *= resistance_2
+}
+else if (_tile == 3)
+{
+	speed *= resistance_3
+}
+else 
+{
+	speed = 0
 }
 
 #endregion
