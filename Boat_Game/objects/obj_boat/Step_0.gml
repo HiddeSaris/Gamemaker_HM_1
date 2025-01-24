@@ -4,50 +4,52 @@
 
 // setting up all the data that differs per boat
 
-if (cur_boat = 0) // houten boot
+switch cur_boat 
 {
-	max_speed = 0.5
-	acceleration = 0.002  
-	turning_acceleration = 0.025 
-	resistance_1 = 1 - (acceleration / (max_speed + acceleration))
-	resistance_2 = power(resistance_1, 8)
-	resistance_3 = power(resistance_1, 16)
-}
-else if (cur_boat = 1) // kleine vissersboot
-{
-	max_speed = 1
-	acceleration = 0.002
-	turning_acceleration = 0.020
-	resistance_1 = 1 - (acceleration / (max_speed + acceleration))
-	resistance_2 = power(resistance_1, 16)
-	resistance_3 = power(resistance_1, 32)
-}
-else if (cur_boat = 2) // middel vissersboot
-{
-	max_speed = 1.5
-	acceleration = 0.001
-	turning_acceleration = 0.010
-	resistance_1 = 1 - (acceleration / (max_speed + acceleration))
-	resistance_2 = power(resistance_1, 16)
-	resistance_3 = power(resistance_1, 32)
-}
-else if (cur_boat = 3) // grote vissersboot
-{
-	max_speed = 2
-	acceleration = 0.001
-	turning_acceleration = 0.010
-	resistance_1 = 1 - (acceleration / (max_speed + acceleration))
-	resistance_2 = power(resistance_1, 16)
-	resistance_3 = power(resistance_1, 32)
-}
-else if (cur_boat = 4) // speedboat
-{
-	max_speed = 3
-	acceleration = 0.004
-	turning_acceleration = 0.03
-	resistance_1 = 1 - (acceleration / (max_speed + acceleration))
-	resistance_2 = power(resistance_1, 16)
-	resistance_3 = power(resistance_1, 32)
+	case 0:  	// houten boot
+		max_speed = 0.5
+		acceleration = 0.002  
+		turning_acceleration = 0.025 
+		resistance_1 = 1 - (acceleration / (max_speed + acceleration))
+		resistance_2 = power(resistance_1, 8)
+		resistance_3 = power(resistance_1, 16)
+	break;
+	
+	case 1:  	// kleine vissersboot
+		max_speed = 1
+		acceleration = 0.002
+		turning_acceleration = 0.020
+		resistance_1 = 1 - (acceleration / (max_speed + acceleration))
+		resistance_2 = power(resistance_1, 16)
+		resistance_3 = power(resistance_1, 32)
+	break;
+	
+	case 2:  	// middel vissersboot
+		max_speed = 1.5
+		acceleration = 0.001
+		turning_acceleration = 0.010
+		resistance_1 = 1 - (acceleration / (max_speed + acceleration))
+		resistance_2 = power(resistance_1, 16)
+		resistance_3 = power(resistance_1, 32)
+	break;
+	
+	case 3:  	// grote vissersboot
+		max_speed = 2
+		acceleration = 0.001
+		turning_acceleration = 0.010
+		resistance_1 = 1 - (acceleration / (max_speed + acceleration))
+		resistance_2 = power(resistance_1, 16)
+		resistance_3 = power(resistance_1, 32)
+	break;
+	
+	case 4:  	// speedboat
+		max_speed = 3
+		acceleration = 0.004
+		turning_acceleration = 0.03
+		resistance_1 = 1 - (acceleration / (max_speed + acceleration))
+		resistance_2 = power(resistance_1, 16)
+		resistance_3 = power(resistance_1, 32)
+	break;
 }
 
 #endregion
@@ -140,47 +142,6 @@ move_wrap(true, true, -16)
 #region COLLISION
 
 var _tilemap = layer_tilemap_get_id("Collision_layer")
-/*// Bbox coords
-var _left = bbox_left + hspeed;
-var _top = bbox_top + vspeed;
-var _right = bbox_right + hspeed;
-var _bottom = bbox_bottom + vspeed;
-
-// Check collision
-var _top_left = tilemap_get_at_pixel(_tilemap, _left, _top);
-var _top_right = tilemap_get_at_pixel(_tilemap, _right, _top);
-var _bottom_left = tilemap_get_at_pixel(_tilemap, _left, _bottom);
-var _bottom_right = tilemap_get_at_pixel(_tilemap, _right, _bottom);
-
-if (_top_left != 16 || _top_right != 16 || _bottom_left != 16 || _bottom_right != 16) // if you touch land
-{
-	respawn_boat()
-} 
-
-// Check collision
-var _top_left_h = tilemap_get_at_pixel(_tilemap, bbox_left + hspeed, bbox_top + hspeed);
-var _top_right_h = tilemap_get_at_pixel(_tilemap, bbox_right + hspeed, bbox_top + hspeed);
-var _bottom_left_h = tilemap_get_at_pixel(_tilemap, bbox_left + hspeed, bbox_bottom + hspeed);
-var _bottom_right_h = tilemap_get_at_pixel(_tilemap, bbox_right + hspeed, bbox_bottom + hspeed);
-
-// Check collision
-var _top_left_v = tilemap_get_at_pixel(_tilemap, bbox_left + vspeed, bbox_top + vspeed);
-var _top_right_v = tilemap_get_at_pixel(_tilemap, bbox_right + vspeed, bbox_top + vspeed);
-var _bottom_left_v = tilemap_get_at_pixel(_tilemap, bbox_left + vspeed, bbox_bottom + vspeed);
-var _bottom_right_v = tilemap_get_at_pixel(_tilemap, bbox_right + vspeed, bbox_bottom + vspeed);
-
-if (_top_left_h != 16 || _top_right_h != 16 || _bottom_left_h != 16 || _bottom_right_h != 16) // if you touch land
-{
-	hspeed = 0
-	turning_speed = 0
-}
-if (_top_left_v != 16 || _top_right_v != 16 || _bottom_left_v != 16 || _bottom_right_v != 16) // if you touch land
-{
-	vspeed = 0
-	turning_speed = 0
-}
-*/
-
 var _tile = tilemap_get_at_pixel(_tilemap, x + hspeed, y + vspeed);
 
 if (_tile == 16) // if you touch land
@@ -346,6 +307,270 @@ if (keyboard_check_pressed(ord("R")))
 	{
 		cur_fishing_rod += 1
 	}
+}
+
+#endregion
+
+#region Particles
+
+front_boat_dir = point_direction(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/2, 3) + image_angle;
+front_boat_len = point_distance(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/2, 3);
+front_boat_x = x + lengthdir_x(front_boat_len, front_boat_dir);
+front_boat_y = y + lengthdir_y(front_boat_len, front_boat_dir);
+// calculations of positions
+
+
+
+part_type_direction(global.pt_splash, image_angle-120, image_angle-60, 0, 0);
+
+switch cur_boat
+{
+	case 0: // houten boot
+		
+		part_type_speed(global.pt_waves_1, speed*0.2, speed*0.3, 0, 0);
+		part_type_direction(global.pt_waves_1, image_angle, image_angle, -1.2, 0);
+		part_type_orientation(global.pt_waves_1, image_angle, image_angle, -1.2, 0, false);
+		part_type_life(global.pt_waves_1, 100, 100);
+		
+		part_type_speed(global.pt_waves_2, speed*0.2, speed*0.3, 0, 0);
+		part_type_direction(global.pt_waves_2, image_angle-180, image_angle-180, 1.2, 0);
+		part_type_orientation(global.pt_waves_2, image_angle-180, image_angle-180, 1.2, 0, false);
+		part_type_life(global.pt_waves_2, 100, 100);
+		
+		part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 0)
+		
+		part_emitter_region(global.p_system, global.p_emitter_waves_1, front_boat_x-1, front_boat_x+1, front_boat_y-1, front_boat_y+1, ps_shape_ellipse, ps_distr_gaussian);
+		part_emitter_region(global.p_system, global.p_emitter_waves_2, front_boat_x-1, front_boat_x+1, front_boat_y-1, front_boat_y+1, ps_shape_ellipse, ps_distr_gaussian);
+		
+		if (speed > 0.2)
+		{
+			part_emitter_stream(global.p_system, global.p_emitter_waves_1, global.pt_waves_1, 1);
+			part_emitter_stream(global.p_system, global.p_emitter_waves_2, global.pt_waves_2, 1);
+		}
+		else 
+		{
+			part_emitter_stream(global.p_system, global.p_emitter_waves_1, global.pt_waves_1, 0);
+			part_emitter_stream(global.p_system, global.p_emitter_waves_2, global.pt_waves_2, 0);
+		}
+		// wave particle
+		
+		motor1_dir = point_direction(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/2, sprite_height-2) + image_angle;
+		motor1_len = point_distance(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/2, sprite_height-2);
+		motor1_x = x + lengthdir_x(motor1_len, motor1_dir);
+		motor1_y = y + lengthdir_y(motor1_len, motor1_dir);
+		// calculating where the particles should be drawn
+		
+		part_type_speed(global.pt_splash, (speed+0.3)/2.5, (speed+0.1), -0.005, 0);
+		part_type_life(global.pt_splash, 30, 40);
+		
+		part_emitter_region(global.p_system, global.p_emitter_splashes_1, motor1_x-5, motor1_x+5, motor1_y-5, motor1_y+5, ps_shape_ellipse, ps_distr_gaussian)
+		
+		if (keyboard_check(ord("W"))) {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 2)  	}
+		else {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 0) 	}
+			
+		part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 0)
+		// splash particle
+	break;
+	
+	case 1: // kleine vissersboot
+		
+		part_type_speed(global.pt_waves_1, speed*0.2, speed*0.3, 0, 0);
+		part_type_direction(global.pt_waves_1, image_angle, image_angle, -1.0, 0);
+		part_type_orientation(global.pt_waves_1, image_angle, image_angle, -1.2, 0, false);
+		part_type_life(global.pt_waves_1, 100, 100);
+		
+		part_type_speed(global.pt_waves_2, speed*0.2, speed*0.3, 0, 0);
+		part_type_direction(global.pt_waves_2, image_angle-180, image_angle-180, 1.0, 0);
+		part_type_orientation(global.pt_waves_2, image_angle-180, image_angle-180, 1.0, 0, false);
+		part_type_life(global.pt_waves_2, 100, 100);
+		
+		part_emitter_region(global.p_system, global.p_emitter_waves_1, front_boat_x-1, front_boat_x+1, front_boat_y-1, front_boat_y+1, ps_shape_ellipse, ps_distr_gaussian);
+		part_emitter_region(global.p_system, global.p_emitter_waves_2, front_boat_x-1, front_boat_x+1, front_boat_y-1, front_boat_y+1, ps_shape_ellipse, ps_distr_gaussian);
+		
+		if (speed > 0.2)
+		{
+			part_emitter_stream(global.p_system, global.p_emitter_waves_1, global.pt_waves_1, 1);
+			part_emitter_stream(global.p_system, global.p_emitter_waves_2, global.pt_waves_2, 1);
+		}
+		else 
+		{
+			part_emitter_stream(global.p_system, global.p_emitter_waves_1, global.pt_waves_1, 0);
+			part_emitter_stream(global.p_system, global.p_emitter_waves_2, global.pt_waves_2, 0);
+		}
+		// wave particle
+		
+		motor1_dir = point_direction(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/3, sprite_height-2) + image_angle;
+		motor1_len = point_distance(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/3, sprite_height-2);
+		motor1_x = x + lengthdir_x(motor1_len, motor1_dir);
+		motor1_y = y + lengthdir_y(motor1_len, motor1_dir);
+		// calculating where the particles should be drawn
+		
+		motor2_dir = point_direction(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/3*2, sprite_height-2) + image_angle;
+		motor2_len = point_distance(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/3*2, sprite_height-2);
+		motor2_x = x + lengthdir_x(motor2_len, motor2_dir);
+		motor2_y = y + lengthdir_y(motor2_len, motor2_dir);
+		// calculating where the particles should be drawn
+		
+		part_type_speed(global.pt_splash, (speed+0.3)/4, (speed+0.1)/2, -0.005, 0);
+		part_type_life(global.pt_splash, 20, 30);
+		
+		part_emitter_region(global.p_system, global.p_emitter_splashes_1, motor1_x-5, motor1_x+5, motor1_y-5, motor1_y+5, ps_shape_ellipse, ps_distr_gaussian)
+		part_emitter_region(global.p_system, global.p_emitter_splashes_2, motor2_x-5, motor2_x+5, motor2_y-5, motor2_y+5, ps_shape_ellipse, ps_distr_gaussian)
+		
+		if (keyboard_check(ord("W"))) {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 2); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 2)  	}
+		else {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 0); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 0)  	}
+		// splash particle
+	break;	
+	
+	case 2: // middel vissersboot
+		
+		part_type_speed(global.pt_waves_1, speed*0.2, speed*0.3, 0, 0);
+		part_type_direction(global.pt_waves_1, image_angle, image_angle, -0.8, 0);
+		part_type_orientation(global.pt_waves_1, image_angle, image_angle, -0.8, 0, false);
+		part_type_life(global.pt_waves_1, 100, 100);
+		
+		part_type_speed(global.pt_waves_2, speed*0.2, speed*0.3, 0, 0);
+		part_type_direction(global.pt_waves_2, image_angle-180, image_angle-180, 0.8, 0);
+		part_type_orientation(global.pt_waves_2, image_angle-180, image_angle-180, 0.8, 0, false);
+		part_type_life(global.pt_waves_2, 100, 100);
+		
+		part_emitter_region(global.p_system, global.p_emitter_waves_1, front_boat_x-1, front_boat_x+1, front_boat_y-1, front_boat_y+1, ps_shape_ellipse, ps_distr_gaussian);
+		part_emitter_region(global.p_system, global.p_emitter_waves_2, front_boat_x-1, front_boat_x+1, front_boat_y-1, front_boat_y+1, ps_shape_ellipse, ps_distr_gaussian);
+		
+		if (speed > 0.2)
+		{
+			part_emitter_stream(global.p_system, global.p_emitter_waves_1, global.pt_waves_1, 2);
+			part_emitter_stream(global.p_system, global.p_emitter_waves_2, global.pt_waves_2, 2);
+		}
+		else 
+		{
+			part_emitter_stream(global.p_system, global.p_emitter_waves_1, global.pt_waves_1, 0);
+			part_emitter_stream(global.p_system, global.p_emitter_waves_2, global.pt_waves_2, 0);
+		}
+		// wave particle
+		
+		motor1_dir = point_direction(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/3, sprite_height-2) + image_angle;
+		motor1_len = point_distance(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/3, sprite_height-2);
+		motor1_x = x + lengthdir_x(motor1_len, motor1_dir);
+		motor1_y = y + lengthdir_y(motor1_len, motor1_dir);
+		// calculating where the particles should be drawn
+		
+		motor2_dir = point_direction(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/3*2, sprite_height-2) + image_angle;
+		motor2_len = point_distance(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/3*2, sprite_height-2);
+		motor2_x = x + lengthdir_x(motor2_len, motor2_dir);
+		motor2_y = y + lengthdir_y(motor2_len, motor2_dir);
+		// calculating where the particles should be drawn
+		
+		part_type_speed(global.pt_splash, (speed+0.3)/5, (speed+0.1)/3, -0.005, 0);
+		part_type_life(global.pt_splash, 20, 30);
+		
+		part_emitter_region(global.p_system, global.p_emitter_splashes_1, motor1_x-5, motor1_x+5, motor1_y-5, motor1_y+5, ps_shape_ellipse, ps_distr_gaussian)
+		part_emitter_region(global.p_system, global.p_emitter_splashes_2, motor2_x-5, motor2_x+5, motor2_y-5, motor2_y+5, ps_shape_ellipse, ps_distr_gaussian)
+		
+		if (keyboard_check(ord("W"))) {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 2); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 2)  	}
+		else {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 0); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 0)  	}
+		// splash particle
+	break;	
+	
+	case 3: // grote vissersboot
+		
+		part_type_speed(global.pt_waves_1, speed*0.2, speed*0.3, 0, 0);
+		part_type_direction(global.pt_waves_1, image_angle, image_angle, -0.8, 0);
+		part_type_orientation(global.pt_waves_1, image_angle, image_angle, -0.8, 0, false);
+		part_type_life(global.pt_waves_1, 100, 100);
+		
+		part_type_speed(global.pt_waves_2, speed*0.2, speed*0.3, 0, 0);
+		part_type_direction(global.pt_waves_2, image_angle-180, image_angle-180, 0.8, 0);
+		part_type_orientation(global.pt_waves_2, image_angle-180, image_angle-180, 0.8, 0, false);
+		part_type_life(global.pt_waves_2, 100, 100);
+		
+		part_emitter_region(global.p_system, global.p_emitter_waves_1, front_boat_x-1, front_boat_x+1, front_boat_y-1, front_boat_y+1, ps_shape_ellipse, ps_distr_gaussian);
+		part_emitter_region(global.p_system, global.p_emitter_waves_2, front_boat_x-1, front_boat_x+1, front_boat_y-1, front_boat_y+1, ps_shape_ellipse, ps_distr_gaussian);
+		
+		if (speed > 0.2)
+		{
+			part_emitter_stream(global.p_system, global.p_emitter_waves_1, global.pt_waves_1, 2);
+			part_emitter_stream(global.p_system, global.p_emitter_waves_2, global.pt_waves_2, 2);
+		}
+		else 
+		{
+			part_emitter_stream(global.p_system, global.p_emitter_waves_1, global.pt_waves_1, 0);
+			part_emitter_stream(global.p_system, global.p_emitter_waves_2, global.pt_waves_2, 0);
+		}
+		// wave particle
+		
+		motor1_dir = point_direction(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/3, sprite_height-2) + image_angle;
+		motor1_len = point_distance(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/3, sprite_height-2);
+		motor1_x = x + lengthdir_x(motor1_len, motor1_dir);
+		motor1_y = y + lengthdir_y(motor1_len, motor1_dir);
+		// calculating where the particles should be drawn
+		
+		motor2_dir = point_direction(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/3*2, sprite_height-2) + image_angle;
+		motor2_len = point_distance(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/3*2, sprite_height-2);
+		motor2_x = x + lengthdir_x(motor2_len, motor2_dir);
+		motor2_y = y + lengthdir_y(motor2_len, motor2_dir);
+		// calculating where the particles should be drawn
+		
+		part_type_speed(global.pt_splash, (speed+0.3)/6, (speed+0.1)/4, -0.005, 0);
+		part_type_life(global.pt_splash, 20, 30);
+		
+		part_emitter_region(global.p_system, global.p_emitter_splashes_1, motor1_x-5, motor1_x+5, motor1_y-5, motor1_y+5, ps_shape_ellipse, ps_distr_gaussian)
+		part_emitter_region(global.p_system, global.p_emitter_splashes_2, motor2_x-5, motor2_x+5, motor2_y-5, motor2_y+5, ps_shape_ellipse, ps_distr_gaussian)
+		
+		if (keyboard_check(ord("W"))) {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 2); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 2)  	}
+		else {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 0); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 0)  	}
+		// splash particle
+	break;	
+	
+	case 4: // speedboat
+		
+		part_type_speed(global.pt_waves_1, speed*0.2, speed*0.3, 0, 0);
+		part_type_direction(global.pt_waves_1, image_angle, image_angle, -0.8, 0);
+		part_type_orientation(global.pt_waves_1, image_angle, image_angle, -0.8, 0, false);
+		part_type_life(global.pt_waves_1, 60, 60);
+		
+		part_type_speed(global.pt_waves_2, speed*0.2, speed*0.3, 0, 0);
+		part_type_direction(global.pt_waves_2, image_angle-180, image_angle-180, 0.8, 0);
+		part_type_orientation(global.pt_waves_2, image_angle-180, image_angle-180, 0.8, 0, false);
+		part_type_life(global.pt_waves_2, 60, 60);
+		
+		part_emitter_region(global.p_system, global.p_emitter_waves_1, front_boat_x-1, front_boat_x+1, front_boat_y-1, front_boat_y+1, ps_shape_ellipse, ps_distr_gaussian);
+		part_emitter_region(global.p_system, global.p_emitter_waves_2, front_boat_x-1, front_boat_x+1, front_boat_y-1, front_boat_y+1, ps_shape_ellipse, ps_distr_gaussian);
+		
+		if (speed > 0.2)
+		{
+			part_emitter_stream(global.p_system, global.p_emitter_waves_1, global.pt_waves_1, 3);
+			part_emitter_stream(global.p_system, global.p_emitter_waves_2, global.pt_waves_2, 3);
+		}
+		else 
+		{
+			part_emitter_stream(global.p_system, global.p_emitter_waves_1, global.pt_waves_1, 0);
+			part_emitter_stream(global.p_system, global.p_emitter_waves_2, global.pt_waves_2, 0);
+		}
+		// wave particle
+		
+		motor1_dir = point_direction(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/3, sprite_height-2) + image_angle;
+		motor1_len = point_distance(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/3, sprite_height-2);
+		motor1_x = x + lengthdir_x(motor1_len, motor1_dir);
+		motor1_y = y + lengthdir_y(motor1_len, motor1_dir);
+		// calculating where the particles should be drawn
+		
+		motor2_dir = point_direction(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/3*2, sprite_height-2) + image_angle;
+		motor2_len = point_distance(sprite_get_xoffset(boats[cur_boat]), sprite_get_yoffset(boats[cur_boat]), sprite_width/3*2, sprite_height-2);
+		motor2_x = x + lengthdir_x(motor2_len, motor2_dir);
+		motor2_y = y + lengthdir_y(motor2_len, motor2_dir);
+		// calculating where the particles should be drawn
+		
+		part_type_speed(global.pt_splash, (speed+0.3)/8, (speed+0.1)/6, -0.005, 0);
+		part_type_life(global.pt_splash, 10, 15);
+		
+		part_emitter_region(global.p_system, global.p_emitter_splashes_1, motor1_x-5, motor1_x+5, motor1_y-5, motor1_y+5, ps_shape_ellipse, ps_distr_gaussian)
+		part_emitter_region(global.p_system, global.p_emitter_splashes_2, motor2_x-5, motor2_x+5, motor2_y-5, motor2_y+5, ps_shape_ellipse, ps_distr_gaussian)
+		
+		if (keyboard_check(ord("W"))) {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 2); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 2)  	}
+		else {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 0); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 0)  	}
+		// splash particle
+	break;	
 }
 
 #endregion
