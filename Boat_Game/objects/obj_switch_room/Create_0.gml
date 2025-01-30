@@ -1,0 +1,9 @@
+target_room = 0;
+target_x = 0;
+target_y = 0;
+timer = -1;
+duration = 60;
+sec_per_frame = duration / sprite_get_number(spr_room_transition);
+cur_frame = 0;
+drawing = false;
+reverse = false

@@ -135,8 +135,6 @@ if (keyboard_check(ord("A")) && !anchor)
 	}
 }
 
-move_wrap(true, true, -16)
-
 #endregion
 
 #region COLLISION
