@@ -58,6 +58,7 @@
     {"id":{"name":"spr_houte_bootje","path":"sprites/spr_houte_bootje/spr_houte_bootje.yy",},},
     {"id":{"name":"spr_kleine_vissers_boot","path":"sprites/spr_kleine_vissers_boot/spr_kleine_vissers_boot.yy",},},
     {"id":{"name":"spr_middel_vissers_boot","path":"sprites/spr_middel_vissers_boot/spr_middel_vissers_boot.yy",},},
+    {"id":{"name":"spr_netten","path":"sprites/spr_netten/spr_netten.yy",},},
     {"id":{"name":"spr_person","path":"sprites/spr_person/spr_person.yy",},},
     {"id":{"name":"spr_speedboot","path":"sprites/spr_speedboot/spr_speedboot.yy",},},
     {"id":{"name":"spr_splash","path":"sprites/spr_splash/spr_splash.yy",},},

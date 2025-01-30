@@ -36,6 +36,7 @@
     {"name":"spr_houte_bootje","order":3,"path":"sprites/spr_houte_bootje/spr_houte_bootje.yy",},
     {"name":"spr_kleine_vissers_boot","order":2,"path":"sprites/spr_kleine_vissers_boot/spr_kleine_vissers_boot.yy",},
     {"name":"spr_middel_vissers_boot","order":4,"path":"sprites/spr_middel_vissers_boot/spr_middel_vissers_boot.yy",},
+    {"name":"spr_netten","order":5,"path":"sprites/spr_netten/spr_netten.yy",},
     {"name":"spr_speedboot","order":5,"path":"sprites/spr_speedboot/spr_speedboot.yy",},
     {"name":"spr_splash","order":2,"path":"sprites/spr_splash/spr_splash.yy",},
     {"name":"spr_tileset","order":2,"path":"sprites/spr_tileset/spr_tileset.yy",},
