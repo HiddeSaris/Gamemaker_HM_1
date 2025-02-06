@@ -6,6 +6,11 @@ switch room{
 		target_x = 50;
 		target_y = 50;
 	break;
+	case world_map:
+		target_room = island_base;
+		target_x = 500;
+		target_y = 500;
+	break;
 }
 
 if (place_meeting(x, y, obj_boat) && timer == -1)
@@ -37,4 +42,5 @@ else if (timer >= duration - 1)
 else 
 {
 	drawing = false
+	reverse = false
 }

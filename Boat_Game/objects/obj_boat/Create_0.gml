@@ -84,6 +84,17 @@ fishing_rod_out_frame = 17; // the frame that the bobber is out and so the anima
 rod_casting_value = 0; // the timer to cast the rod
 rod_casting_time = 1 * 60; // the time in steps it takes to cast the rod
 
+fish_timer = -1
+fish_timer_duration = 4 * 60 // time you have to wait for the fish
+fish_timer_variation = 2 * 60
+
+fish_on_hook = false
+fish_on_hook_timer = -1
+fish_on_hook_timer_duration = 2 * 60 // time you have to catch the fish
+fish_on_hook_timer_variation = 1 * 60
+
+fishing_game = false
+
 global.p_system = part_system_create_layer("Particle_Layer", true);
 global.p_emitter_waves_1 = part_emitter_create(global.p_system);
 global.p_emitter_waves_2 = part_emitter_create(global.p_system);

@@ -202,7 +202,6 @@ if (keyboard_check_pressed(ord("E")))
 			fishing = false
 			wanting_to_steer = true
 			image_speed = 1 // stop the animation
-			//image_index = 0 // go back to steering position
 		}
 	}
 	else
@@ -258,13 +257,21 @@ if ((mouse_check_button(mb_left) or keyboard_check(vk_space)) && fishing && bobb
 	else if (fishing_rod_out)// pull the rod out of the water
 	{
 		fishing_rod_out = false
-		catched_fish = fish_drop(100, drop_tables.regular)
-		array_push(fish_in_inventory, catched_fish)
+		if (fish_on_hook)
+		{
+			// you catched a fish
+			catched_fish = fish_drop(100, drop_tables.regular)
+			array_push(fish_in_inventory, catched_fish)
+			fishing_game = true
+		}
+		fish_on_hook = false
+		fish_timer = -1
+		fish_on_hook_timer = -1
 	}
 }
 else if (keyboard_check_pressed(vk_space) && fishing && not bobber_in_water)
 {
-	show_message("did you know you have to fish in water, you learn something new every day.")
+	show_message("Did you know you have to fish in water, you learn something new every day.")
 }
 else 
 {
@@ -287,10 +294,41 @@ if (fishing_rod_animation_timer = fishing_rod_out_frame * 7)
 {
 	fishing_rod_out = true // update the variable
 } 
+
 if (fishing_rod_out && !fishing_rod_out_prev) // when fishing rod out has changed to true
 {
+	// spawn a water ripple particle
 	part_type_orientation(global.pt_water_ripple, image_angle, image_angle, 0, 0, false)
 	part_particles_create(global.p_system, bobber_x, bobber_y, global.pt_water_ripple, 1)
+	
+	// set a timer for a fish to spawn
+	fish_timer = fish_timer_duration + irandom(fish_timer_variation)
+}
+
+
+// fish timer
+if (fish_timer >= 0)
+{
+	fish_timer--
+}
+if (fish_timer == 0)
+{
+	// spawn fish
+	fish_on_hook = true
+	fish_on_hook_timer = fish_on_hook_timer_duration + irandom(fish_on_hook_timer_variation)
+}
+
+
+// fish ton hook timer
+if (fish_on_hook_timer >= 0)
+{
+	fish_on_hook_timer--
+}
+if (fish_on_hook_timer == 0)
+{
+	// fish disappeared
+	fish_on_hook = false
+	fish_timer = fish_timer_duration + irandom(fish_timer_variation) // wait for a new fish
 }
 
 
@@ -316,8 +354,6 @@ front_boat_len = point_distance(sprite_get_xoffset(boats[cur_boat]), sprite_get_
 front_boat_x = x + lengthdir_x(front_boat_len, front_boat_dir);
 front_boat_y = y + lengthdir_y(front_boat_len, front_boat_dir);
 // calculations of positions
-
-
 
 part_type_direction(global.pt_splash, image_angle-120, image_angle-60, 0, 0);
 

@@ -24,7 +24,8 @@
         {"$GMRTileLayer":"","%Name":"cliff_1","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"cliff_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":80,"SerialiseWidth":80,"TileCompressedData":[
               -33,-2147483648,-19,0,-61,-2147483648,-19,0,-61,-2147483648,-19,0,-61,-2147483648,-19,0,-61,-2147483648,
               -19,0,-61,-2147483648,-19,0,-61,-2147483648,-19,0,-61,-2147483648,-19,0,-61,-2147483648,-19,0,-61,-2147483648,
-              -19,0,-61,-2147483648,-19,0,-5548,-2147483648,
+              -19,0,-61,-2147483648,-19,0,-151,-2147483648,1,8,-79,-2147483648,1,8,-79,-2147483648,1,8,-79,-2147483648,
+              1,8,-79,-2147483648,1,8,-79,-2147483648,1,8,-4996,-2147483648,
             ],"TileDataFormat":1,},"tilesetId":{"name":"TileSet1","path":"tilesets/TileSet1/TileSet1.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
         {"$GMRTileLayer":"","%Name":"beach","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"beach","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":80,"SerialiseWidth":80,"TileCompressedData":[
               5,59,58,75,74,59,-3,74,3,59,58,59,-3,75,-3,74,24,59,75,59,75,59,59,75,75,59,75,59,58,75,74,59,74,75,
