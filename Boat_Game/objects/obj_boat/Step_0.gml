@@ -399,7 +399,7 @@ switch cur_boat
 		
 		part_emitter_region(global.p_system, global.p_emitter_splashes_1, motor1_x-5, motor1_x+5, motor1_y-5, motor1_y+5, ps_shape_ellipse, ps_distr_gaussian)
 		
-		if (keyboard_check(ord("W"))) {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 2)  	}
+		if (keyboard_check(ord("W")) && !anchor) {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 2)  	}
 		else {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 0) 	}
 			
 		part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 0)
@@ -451,7 +451,7 @@ switch cur_boat
 		part_emitter_region(global.p_system, global.p_emitter_splashes_1, motor1_x-5, motor1_x+5, motor1_y-5, motor1_y+5, ps_shape_ellipse, ps_distr_gaussian)
 		part_emitter_region(global.p_system, global.p_emitter_splashes_2, motor2_x-5, motor2_x+5, motor2_y-5, motor2_y+5, ps_shape_ellipse, ps_distr_gaussian)
 		
-		if (keyboard_check(ord("W"))) {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 2); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 2)  	}
+		if (keyboard_check(ord("W")) && !anchor) {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 2); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 2)  	}
 		else {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 0); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 0)  	}
 		// splash particle
 	break;	
@@ -501,7 +501,7 @@ switch cur_boat
 		part_emitter_region(global.p_system, global.p_emitter_splashes_1, motor1_x-5, motor1_x+5, motor1_y-5, motor1_y+5, ps_shape_ellipse, ps_distr_gaussian)
 		part_emitter_region(global.p_system, global.p_emitter_splashes_2, motor2_x-5, motor2_x+5, motor2_y-5, motor2_y+5, ps_shape_ellipse, ps_distr_gaussian)
 		
-		if (keyboard_check(ord("W"))) {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 2); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 2)  	}
+		if (keyboard_check(ord("W")) && !anchor) {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 2); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 2)  	}
 		else {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 0); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 0)  	}
 		// splash particle
 	break;	
@@ -551,7 +551,7 @@ switch cur_boat
 		part_emitter_region(global.p_system, global.p_emitter_splashes_1, motor1_x-5, motor1_x+5, motor1_y-5, motor1_y+5, ps_shape_ellipse, ps_distr_gaussian)
 		part_emitter_region(global.p_system, global.p_emitter_splashes_2, motor2_x-5, motor2_x+5, motor2_y-5, motor2_y+5, ps_shape_ellipse, ps_distr_gaussian)
 		
-		if (keyboard_check(ord("W"))) {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 2); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 2)  	}
+		if (keyboard_check(ord("W")) && !anchor) {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 2); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 2)  	}
 		else {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 0); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 0)  	}
 		// splash particle
 	break;	
@@ -601,7 +601,7 @@ switch cur_boat
 		part_emitter_region(global.p_system, global.p_emitter_splashes_1, motor1_x-5, motor1_x+5, motor1_y-5, motor1_y+5, ps_shape_ellipse, ps_distr_gaussian)
 		part_emitter_region(global.p_system, global.p_emitter_splashes_2, motor2_x-5, motor2_x+5, motor2_y-5, motor2_y+5, ps_shape_ellipse, ps_distr_gaussian)
 		
-		if (keyboard_check(ord("W"))) {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 2); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 2)  	}
+		if (keyboard_check(ord("W")) && !anchor) {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 2); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 2)  	}
 		else {	part_emitter_stream(global.p_system, global.p_emitter_splashes_1, global.pt_splash, 0); part_emitter_stream(global.p_system, global.p_emitter_splashes_2, global.pt_splash, 0)  	}
 		// splash particle
 	break;	

@@ -30,6 +30,7 @@
     {"name":"spr_block","order":14,"path":"sprites/spr_block/spr_block.yy",},
     {"name":"spr_button_fullscreen","order":3,"path":"sprites/spr_button_fullscreen/spr_button_fullscreen.yy",},
     {"name":"spr_button_quit","order":4,"path":"sprites/spr_button_quit/spr_button_quit.yy",},
+    {"name":"spr_fishing_minigame","order":6,"path":"sprites/spr_fishing_minigame/spr_fishing_minigame.yy",},
     {"name":"spr_fishing_rod_lv0","order":1,"path":"sprites/spr_fishing_rod_lv0/spr_fishing_rod_lv0.yy",},
     {"name":"spr_fishing_rod_lv1","order":3,"path":"sprites/spr_fishing_rod_lv1/spr_fishing_rod_lv1.yy",},
     {"name":"spr_fishing_rod_lv2","order":4,"path":"sprites/spr_fishing_rod_lv2/spr_fishing_rod_lv2.yy",},

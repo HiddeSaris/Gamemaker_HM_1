@@ -19,17 +19,10 @@ if (image_index >= fishing_frame_boats[cur_boat] - 1 && image_index <= fishing_f
 	draw_sprite_ext(spr_person, frame_person, person_x, person_y, 1, 1, image_angle, c_white, 1)
 	draw_sprite_ext(fishing_rods[cur_fishing_rod], frame_fishing_rod, person_x, person_y, 1, 1, image_angle, c_white, 1)
 }
-/*
-if (fishing_rod_out && !fishing_rod_out_prev) // when fishing rod out has changed to true
+if (fishing_game)
 {
-	animation_timer = 12 * sprite_get_number(spr_splash) // start the animation
+	draw_sprite_ext(spr_fishing_minigame, 0, person_x - 8, person_y, 1, 1, 0, c_white, 1);
 }
-if (animation_timer > 0)
-{
-	animation_timer -= 1
-	animation_frame = sprite_get_number(spr_splash) - floor(animation_timer / 12)
-	draw_sprite_ext(spr_splash, animation_frame, bobber_x, bobber_y, 1, 1, image_angle, c_white, 1)
-}
-*/
+
 fishing_rod_out_prev = fishing_rod_out
 fishing_rod_in_prev = fishing_rod_in

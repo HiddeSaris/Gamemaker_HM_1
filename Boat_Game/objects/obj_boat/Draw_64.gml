@@ -1,11 +1,12 @@
 var gh = display_get_gui_height()
 var gw = display_get_gui_width()
-
+/*
 draw_text_transformed(0, 0, "speed:  " + string(speed), 3, 3, 0)
 draw_text_transformed(0, 40, "catched fish: " + string(catched_fish), 3, 3, 0)
 draw_text_transformed(0, 80, "fish: " + string(fish_in_inventory), 3, 3, 0)
 draw_text_transformed(0, 120, "fish timer: " + string(fish_timer), 3, 3, 0)
 draw_text_transformed(0, 160, "fish on hook timer: " + string(fish_on_hook_timer), 3, 3, 0)
+*/
 
 if (rod_casting_value != 0)
 {
@@ -22,5 +23,5 @@ if (fish_on_hook)
 
 if respawn_screen
 {
-	draw_sprite_stretched(spr_your_stranded, 0, 0, 0, display_get_gui_width(), display_get_gui_height())
+	draw_sprite_stretched(spr_your_stranded, 0, 0, 0, gw, gh)
 }
