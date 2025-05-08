@@ -93,7 +93,27 @@ fish_on_hook_timer = -1
 fish_on_hook_timer_duration = 2 * 60 // time you have to catch the fish
 fish_on_hook_timer_variation = 1 * 60
 
-fishing_game = false
+fishing_game = false;
+
+indicator_y = 0;
+indicator_speed = 0;
+indicator_acceleration = 0.03;
+indicator_damping = 0.4;
+indicator_height = 20;
+fishing_game_max_height = 79;
+
+game_fish_y = 0;
+game_fish_old_y = 0;
+game_fish_new_y_change = 0;
+game_fish_timer = 0;
+game_fish_dur = 180;
+game_fish_cur_dur = 0;
+
+indicator_on_fish = false;
+game_req_score = 500;
+game_score = 125;
+
+surface_indicator = surface_create(sprite_get_width(spr_fishing_indicator), 79);
 
 global.p_system = part_system_create_layer("Particle_Layer", true);
 global.p_emitter_waves_1 = part_emitter_create(global.p_system);

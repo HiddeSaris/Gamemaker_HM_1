@@ -1,3 +1,5 @@
+randomize();
+
 #region BOAT
 
 #region SETTING UP SPEED PER BOAT
@@ -184,8 +186,8 @@ else if (anchor)
 
 #region FISHING
 
+#region go to fishing pos
 
-// go to fishing pos
 if (keyboard_check_pressed(ord("E"))) 
 {
 	if (anchor)
@@ -210,8 +212,10 @@ if (keyboard_check_pressed(ord("E")))
 	}
 }
 
+#endregion
 
-// calculating the bobbers position
+#region calculating the bobbers position
+
 bobber_dir = point_direction(sprite_get_xoffset(spr_fishing_rod_lv0), sprite_get_yoffset(spr_fishing_rod_lv0), 0, 0) + image_angle
 bobber_len = point_distance(sprite_get_xoffset(spr_fishing_rod_lv0), sprite_get_yoffset(spr_fishing_rod_lv0), 0, 0)
 
@@ -229,6 +233,9 @@ else
 	bobber_in_water = true
 }
 
+#endregion
+
+#region ANIMATION & TIMING
 
 // frame of the walking animation when at fishing pos
 if (image_index >= fishing_frame_boats[cur_boat] && !wanting_to_steer) 
@@ -247,8 +254,11 @@ if (image_index <= 1 && !wanting_to_fish)
 	image_speed = 0 // stop the animation
 }
 
-// throwing out the fishing rod
-if ((mouse_check_button(mb_left) or keyboard_check(vk_space)) && fishing && bobber_in_water)
+#endregion
+
+#region throwing out the fishing rod
+
+if ((mouse_check_button(mb_left) or keyboard_check(vk_space)) && fishing && bobber_in_water && not fishing_game)
 {
 	if (fishing_rod_in)
 	{
@@ -260,16 +270,22 @@ if ((mouse_check_button(mb_left) or keyboard_check(vk_space)) && fishing && bobb
 		if (fish_on_hook)
 		{
 			// you catched a fish
-			catched_fish = fish_drop(100, drop_tables.regular)
-			array_push(fish_in_inventory, catched_fish)
-			fishing_game = true
+			catched_fish = fish_drop(100, drop_tables.regular);
+			fishing_game = true;
+			game_score = 125;
+			indicator_y = 0;
+			indicator_height = obj_loot_table.fish_catalogue[catched_fish, drop_bar_height];
+			game_fish_y = 0;
+			game_fish_old_y = 0;
+			game_fish_new_y_change = 0;
+			game_fish_dur = obj_loot_table.fish_catalogue[catched_fish, drop_move_time];
 		}
-		fish_on_hook = false
-		fish_timer = -1
-		fish_on_hook_timer = -1
+		fish_on_hook = false;
+		fish_timer = -1;
+		fish_on_hook_timer = -1;
 	}
 }
-else if (keyboard_check_pressed(vk_space) && fishing && not bobber_in_water)
+else if ((keyboard_check_pressed(vk_space) or mouse_check_button_pressed(mb_left)) && fishing && not bobber_in_water && not fishing_game)
 {
 	show_message("Did you know you have to fish in water, you learn something new every day.")
 }
@@ -305,6 +321,64 @@ if (fishing_rod_out && !fishing_rod_out_prev) // when fishing rod out has change
 	fish_timer = fish_timer_duration + irandom(fish_timer_variation)
 }
 
+#endregion
+
+#region FISHING GAME
+
+if (fishing_game){
+	// indicator
+	if (keyboard_check(vk_space) or mouse_check_button(mb_left)){
+		indicator_speed += indicator_acceleration;
+	}
+	else {
+		indicator_speed -= indicator_acceleration;
+	}
+	
+	if (indicator_y + indicator_height + indicator_speed > fishing_game_max_height){
+		indicator_y = fishing_game_max_height - indicator_height;
+		indicator_speed = -indicator_speed * indicator_damping;
+	}
+	else if (indicator_y + indicator_speed < 0){
+		indicator_y = 0;
+		indicator_speed = -indicator_speed * indicator_damping;
+	}
+	else{
+		indicator_y += indicator_speed;
+	}
+	
+	// fish
+	if (abs(game_fish_y - (game_fish_old_y + game_fish_new_y_change)) < 0.1){ // at new location
+		game_fish_new_y_change = 0.1 * power(irandom(18), 2) * (irandom(2) - 1); // random num between -36 and 36 with a higher chance of being closer to 0
+		
+		if (game_fish_y + game_fish_new_y_change < 0 or game_fish_y + game_fish_new_y_change + sprite_get_height(spr_fishing_game_fish) * 2 / 5 > fishing_game_max_height){
+			game_fish_new_y_change *= -1;
+		}
+		game_fish_old_y = game_fish_y;
+		game_fish_timer = 0;
+		game_fish_cur_dur = game_fish_dur + irandom_range(-60, 60);
+	}
+	game_fish_timer++;
+	game_fish_y = -game_fish_new_y_change/2 * (cos(pi*game_fish_timer/game_fish_cur_dur) - 1) + game_fish_old_y;
+	
+	// score
+	if (game_fish_y > indicator_y && game_fish_y + sprite_get_height(spr_fishing_game_fish) * 2 / 5 < indicator_y + indicator_height){
+		indicator_on_fish = true;
+		game_score ++;
+	}
+	else{
+		indicator_on_fish = false;	
+		game_score --;
+	}
+	
+	if (game_score >= game_req_score){
+		array_push(fish_in_inventory, catched_fish);
+		fishing_game = false;
+	}
+}
+
+#endregion
+
+#region FISH TIMERS
 
 // fish timer
 if (fish_timer >= 0)
@@ -319,7 +393,7 @@ if (fish_timer == 0)
 }
 
 
-// fish ton hook timer
+// fish on hook timer
 if (fish_on_hook_timer >= 0)
 {
 	fish_on_hook_timer--
@@ -331,11 +405,13 @@ if (fish_on_hook_timer == 0)
 	fish_timer = fish_timer_duration + irandom(fish_timer_variation) // wait for a new fish
 }
 
+#endregion
 
-// switching between different fishing rods
+#region switching between different fishing rods
+
 if (keyboard_check_pressed(ord("R")))
 {
-	if (cur_fishing_rod = array_length(fishing_rods) - 1) // If its the last boat
+	if (cur_fishing_rod = array_length(fishing_rods) - 1) // If its the last fishing rod
 	{
 		cur_fishing_rod = 0
 	}
@@ -344,6 +420,8 @@ if (keyboard_check_pressed(ord("R")))
 		cur_fishing_rod += 1
 	}
 }
+
+#endregion
 
 #endregion
 
@@ -608,3 +686,4 @@ switch cur_boat
 }
 
 #endregion
+

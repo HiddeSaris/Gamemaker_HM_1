@@ -19,10 +19,6 @@ if (image_index >= fishing_frame_boats[cur_boat] - 1 && image_index <= fishing_f
 	draw_sprite_ext(spr_person, frame_person, person_x, person_y, 1, 1, image_angle, c_white, 1)
 	draw_sprite_ext(fishing_rods[cur_fishing_rod], frame_fishing_rod, person_x, person_y, 1, 1, image_angle, c_white, 1)
 }
-if (fishing_game)
-{
-	draw_sprite_ext(spr_fishing_minigame, 0, person_x - 8, person_y, 1, 1, 0, c_white, 1);
-}
 
 fishing_rod_out_prev = fishing_rod_out
 fishing_rod_in_prev = fishing_rod_in

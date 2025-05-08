@@ -40,7 +40,7 @@ if (probability > 0 && table != noone)
 			
 			if (_drop >= (1 + _verify_sum_begin) && _drop <= _verify_sum_end)
 			{
-				_drop_fish_index = obj_loot_table.fish_catalogue[_drop_table_array[_i], drop_name];
+				_drop_fish_index = _drop_table_array[_i];
 			}
 		}
 		return _drop_fish_index
