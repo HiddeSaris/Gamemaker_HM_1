@@ -10,8 +10,7 @@ draw_set_valign(fa_middle);
 draw_set_font(fnt_iflash);
 draw_set_color(#BCAE72);
 
-
-//683 - 400 = 283
+draw_text_transformed(gw/2, 100, "BOATY FLOATY", 16, 16, 0);
 
 draw_text_transformed(gw/2, 380, "PLAY", 8, 8, 0);
 draw_text_transformed(gw/2+5, 507, "CONTROLS", 8, 8, 0);
