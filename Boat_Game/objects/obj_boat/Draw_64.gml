@@ -1,19 +1,15 @@
 var gh = display_get_gui_height()
 var gw = display_get_gui_width()
 
-draw_set_halign(fa_right)
+draw_set_font(fnt_iflash);
+
+draw_set_halign(fa_right);
 draw_text_transformed(gw, 0, "speed:  " + string(speed), 3, 3, 0)
-draw_text_transformed(gw, 40, "catched fish: " + string(catched_fish), 3, 3, 0)
-draw_text_transformed(gw, 80, "fish: " + string(fish_in_inventory), 3, 3, 0)
-draw_text_transformed(gw, 120, "fish timer: " + string(fish_timer), 3, 3, 0)
-draw_text_transformed(gw, 160, "fish on hook timer: " + string(fish_on_hook_timer), 3, 3, 0)
-draw_text_transformed(gw, 200, "indicator_speed: " + string(indicator_speed), 3, 3, 0)
-draw_text_transformed(gw, 240, "indicator_y: " + string(indicator_y), 3, 3, 0)
-draw_text_transformed(gw, 280, "fish_y: " + string(game_fish_y), 3, 3, 0)
-draw_text_transformed(gw, 320, "fish_new_y: " + string(game_fish_old_y + game_fish_new_y_change), 3, 3, 0)
-draw_text_transformed(gw, 360, "duration: " + string(game_fish_cur_dur), 3, 3, 0)
-draw_text_transformed(gw, 400, "score: " + string(game_score), 3, 3, 0)
-draw_set_halign(fa_left)
+draw_text_transformed(gw, 30, "catched fish: " + string(catched_fish), 3, 3, 0)
+draw_text_transformed(gw, 60, "fish: " + string(fish_in_inventory), 3, 3, 0)
+draw_text_transformed(gw, 90, "fish timer: " + string(fish_timer), 3, 3, 0)
+draw_text_transformed(gw, 120, "fish on hook timer: " + string(fish_on_hook_timer), 3, 3, 0)
+draw_set_halign(fa_left);
 
 if (fishing_game)
 {
