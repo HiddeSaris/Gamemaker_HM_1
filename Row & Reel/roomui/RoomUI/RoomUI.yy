@@ -1,0 +1,22 @@
+{
+  "$GMRoomUI":"",
+  "%Name":"RoomUI",
+  "children":[
+    {"$GMRUILayer":"v1","%Name":"UILayer_1","alignItems":2,"children":[
+        {"$GMRFlexPanel":"","%Name":"FlexPanel_1","alignItems":2,"children":[
+            {"$GMRFlexPanel":"","%Name":"FlexPanel","alignItems":2,"children":[],"flexDirection":0,"height":{"unit":3,"value":16.0,},"justifyContent":1,"maxHeight":{"unit":1,"value":0.0,},"maxWidth":{"unit":1,"value":0.0,},"minHeight":{"unit":1,"value":100.0,},"minWidth":{"unit":1,"value":100.0,},"name":"FlexPanel","nodeColour":4282960370,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":3,"value":16.0,},},
+            {"$GMRFlexPanel":"","%Name":"FlexPanel_2","alignItems":2,"children":[],"flexDirection":0,"height":{"unit":3,"value":16.0,},"justifyContent":1,"marginTop":{"unit":1,"value":50.0,},"maxHeight":{"unit":2,"value":50.0,},"maxWidth":{"unit":2,"value":50.0,},"minHeight":{"unit":2,"value":25.0,},"minWidth":{"unit":2,"value":25.0,},"name":"FlexPanel_2","nodeColour":4282960370,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":3,"value":16.0,},},
+          ],"flexDirection":0,"height":{"unit":3,"value":100.0,},"justifyContent":1,"name":"FlexPanel_1","nodeColour":4288672328,"paddingBottom":{"unit":1,"value":50.0,},"paddingLeft":{"unit":1,"value":50.0,},"paddingRight":{"unit":1,"value":50.0,},"paddingTop":{"unit":1,"value":50.0,},"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":3,"value":100.0,},},
+      ],"flexDirection":0,"gridX":32,"gridY":32,"justifyContent":1,"name":"UILayer_1","nodeColour":4282970850,"paddingBottom":{"unit":1,"value":50.0,},"paddingLeft":{"unit":1,"value":150.0,},"paddingRight":{"unit":1,"value":150.0,},"paddingTop":{"unit":1,"value":50.0,},"resourceType":"GMRUILayer","resourceVersion":"2.0","visible":false,},
+  ],
+  "locked":false,
+  "name":"RoomUI",
+  "parent":{
+    "name":"Boat_Game",
+    "path":"Boat_Game.yyp",
+  },
+  "resourceType":"GMRoomUI",
+  "resourceVersion":"2.0",
+  "viewspaceChildren":[],
+  "visible":true,
+}
