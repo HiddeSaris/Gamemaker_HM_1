@@ -19,7 +19,7 @@ camera_set_view_pos(_cam, x - (_cam_width * 0.5), y - (_cam_height * 0.5));
 #endregion
 
 #region ZOOM
-
+/*
 var _scroll_multiplier = 1.05
 
 var _cam_x = camera_get_view_x(_cam)
@@ -35,5 +35,5 @@ if (mouse_wheel_up())
 	camera_set_view_pos(_cam, _cam_x + (_cam_width - _cam_width / _scroll_multiplier) / 2, _cam_y + (_cam_height - _cam_height / _scroll_multiplier) / 2)
 	camera_set_view_size(_cam, _cam_width / _scroll_multiplier, _cam_height / _scroll_multiplier)
 }
-
+*/
 #endregion

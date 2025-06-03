@@ -1,31 +1,21 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function fish_drop(table){
-// probability is the percent chance to catch a fish
-// table is the droptable to pick the fish from
-	
 randomize()
 	
 if (table != noone)
 {
-	// what to drop
 	var _drop_table_array = obj_loot_table.drop_table_index[table];
 	var _num_of_fish = array_length(_drop_table_array);
-		
-	// total length of the chance sum
+
 	var _chance_sum = 0;
-	var _cur_fish = 0;
-	repeat(_num_of_fish)
+	for (var i=0; i < _num_of_fish; i++)
 	{
-		// add the chance of the current fish to total
-		_chance_sum += obj_loot_table.fish_catalogue[_drop_table_array[_cur_fish], drop_chance]
-			
-		// go to next fish
-		_cur_fish++
+		_chance_sum += obj_loot_table.fish_catalogue[_drop_table_array[i], drop_chance]
 	}
 		
 	// pick a number within the chance sum
-	var _drop = irandom_range(1, _chance_sum);
+	var _drop = irandom(_chance_sum);
 	
 	// check what fish the picked number is
 	var _verify_sum_end = 0;
